@@ -1071,3 +1071,124 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 24.083, y: -16.905, z: 0}
+--- !u!1001 &3292452117368133807
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5858225601158767514, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858225601158767514, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.093518496
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858225601158767514, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5742182
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858225601158767514, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.22995
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858225601158767514, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858225601158767514, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858225601158767514, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858225601158767514, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858225601158767514, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858225601158767514, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858225601158767514, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940560441211067807, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
+      propertyPath: m_Name
+      value: LevelScripts
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8940560441211067807, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3292452117368133809}
+  m_SourcePrefab: {fileID: 100100000, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
+--- !u!1 &3292452117368133808 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8940560441211067807, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
+  m_PrefabInstance: {fileID: 3292452117368133807}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3292452117368133809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3292452117368133808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NotificationBehavior: 2
+  m_MaxPlayerCount: 4
+  m_AllowJoining: 1
+  m_JoinBehavior: 1
+  m_PlayerJoinedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_PlayerLeftEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_JoinAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Join
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 4b426040-2f52-47b3-a4ed-5bcc30faa2ad
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 23da9103-6ac1-460f-86e8-bdf9b241643b
+        m_Path: <Gamepad>/start
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Join
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_PlayerPrefab: {fileID: 615683920}
+  m_SplitScreen: 0
+  m_MaintainAspectRatioInSplitScreen: 0
+  m_FixedNumberOfSplitScreens: -1
+  m_SplitScreenRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
