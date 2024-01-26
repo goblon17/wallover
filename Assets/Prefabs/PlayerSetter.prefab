@@ -24,12 +24,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 566614877379348549}
-  m_LocalRotation: {x: -0.7071068, y: -0.00000005960465, z: 0.00000005960465, w: 0.7071068}
-  m_LocalPosition: {x: -0.25000012, y: 0, z: -1.4000006}
+  m_LocalRotation: {x: -0.5, y: 0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: 0, y: 0.2500002, z: -1.4000008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6324029092622626248}
+  m_Father: {fileID: 2313216858150276864}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3941434534208262644
@@ -78,6 +78,7 @@ Transform:
   m_Children:
   - {fileID: 8676935051110521156}
   - {fileID: 4868083328532546271}
+  - {fileID: 8540874307109415658}
   m_Father: {fileID: 6324029092622626248}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -272,6 +273,7 @@ Transform:
   m_Children:
   - {fileID: 5505379161666570832}
   - {fileID: 2187893777519903066}
+  - {fileID: 4978086444694690911}
   m_Father: {fileID: 6324029092622626248}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -722,12 +724,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5389293621868847492}
-  m_LocalRotation: {x: -0.7071068, y: 0.00000005960465, z: -0.00000005960465, w: 0.7071068}
-  m_LocalPosition: {x: 0.25000012, y: 0, z: -1.4000006}
+  m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: -0, y: 0.2500002, z: -1.4000008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6324029092622626248}
+  m_Father: {fileID: 5905864362322576947}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &282674501869666855
@@ -787,6 +789,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6324029092622626248}
+  - component: {fileID: 881123675344714963}
   m_Layer: 0
   m_Name: Armature
   m_TagString: Untagged
@@ -807,13 +810,29 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2313216858150276864}
-  - {fileID: 4978086444694690911}
   - {fileID: 5905864362322576947}
-  - {fileID: 8540874307109415658}
   - {fileID: 7041922136249689571}
   m_Father: {fileID: 3131026103232773462}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &881123675344714963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5574537862721218434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8dc3da276679a043897b1e440a78f0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInputAdapter: {fileID: 0}
+  leftHandHandler: {fileID: 2873314159285698654}
+  rightHandHandler: {fileID: 2645287095688283834}
+  leftFootHandler: {fileID: 4978086444694690911}
+  rightFootHandler: {fileID: 8540874307109415658}
+  core: {fileID: 6324029092622626248}
 --- !u!1 &6368749493263099245
 GameObject:
   m_ObjectHideFlags: 0

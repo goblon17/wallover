@@ -4,12 +4,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(PlayerInput))]
-[RequireComponent(typeof(PlayerLimbMover))]
 public class PlayerInputAdapter : MonoBehaviour
 {
-    [SerializeField]
-    private PlayerLimbMover limbMover;
-
     public event System.Action NoLimbSelectedEvent;
 
     private bool useLeftArm = false;
@@ -22,11 +18,11 @@ public class PlayerInputAdapter : MonoBehaviour
         Vector2 input = context.ReadValue<Vector2>();
         if (useLeftArm)
         {
-            limbMover.MoveLeftArm(input);
+            //limbMover.MoveLeftArm(input);
         }
         if (useLeftLeg)
         {
-            limbMover.MoveLeftLeg(input);
+            //limbMover.MoveLeftLeg(input);
         }
     }
 
@@ -35,11 +31,11 @@ public class PlayerInputAdapter : MonoBehaviour
         Vector2 input = context.ReadValue<Vector2>();
         if (useRightArm)
         {
-            limbMover.MoveRightArm(input);
+            //limbMover.MoveRightArm(input);
         }
         if (useRightLeg)
         {
-            limbMover.MoveRightLeg(input);
+            //limbMover.MoveRightLeg(input);
         }
     }
 
