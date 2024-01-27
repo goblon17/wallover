@@ -10,7 +10,6 @@ public class PlayerInputAdapter : MonoBehaviour
     [SerializeField]
     private PlayerBodyMover mover;
 
-    [SerializeField]
     private GameManager gameManager;
 
     public event System.Action NoLimbSelectedEvent;
