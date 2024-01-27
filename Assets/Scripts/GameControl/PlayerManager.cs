@@ -1,11 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : Singleton<PlayerManager>
 {
     public enum PlayerColor { Red, Blue, Green, Yellow };
 
@@ -13,8 +12,9 @@ public class PlayerManager : MonoBehaviour
 
     private HashSet<PlayerColor> players;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         players = new HashSet<PlayerColor>();
     }
 

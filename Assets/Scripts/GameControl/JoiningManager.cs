@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class JoiningManager : MonoBehaviour
+public class JoiningManager : Singleton<JoiningManager>
 {
     [SerializeField]
     private GameManager gameManager;
@@ -22,8 +22,9 @@ public class JoiningManager : MonoBehaviour
     private bool started = false;
     private float counter = 0;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         gameManager.GameStateChangedEvent += OnGameStateChanged;
     }
 
