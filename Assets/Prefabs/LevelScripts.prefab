@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3688213378428409996}
   - component: {fileID: 5596137589397831374}
   - component: {fileID: 1040684833448616141}
-  - component: {fileID: 893904184192318715}
   - component: {fileID: 6045988985092608534}
   - component: {fileID: 3502106571681711234}
   m_Layer: 0
@@ -145,30 +144,30 @@ MonoBehaviour:
     pairs:
     - Key:
         item: 0
-      Value: {x: -6, y: 0, z: -2}
+      Value: {x: -6, y: 0, z: -4}
     - Key:
         item: 1
-      Value: {x: -2, y: 0, z: -2}
+      Value: {x: -2, y: 0, z: -4}
     - Key:
         item: 2
-      Value: {x: 2, y: 0, z: -2}
+      Value: {x: 2, y: 0, z: -4}
     - Key:
         item: 3
-      Value: {x: 6, y: 0, z: -2}
+      Value: {x: 6, y: 0, z: -4}
   playersSpawnPositions:
     pairs:
     - Key:
         item: 0
-      Value: {x: -6, y: 6, z: -2}
+      Value: {x: -6, y: 6, z: -4}
     - Key:
         item: 1
-      Value: {x: -2, y: 6, z: -2}
+      Value: {x: -2, y: 6, z: -4}
     - Key:
         item: 2
-      Value: {x: 2, y: 6, z: -2}
+      Value: {x: 2, y: 6, z: -4}
     - Key:
         item: 3
-      Value: {x: 6, y: 6, z: -2}
+      Value: {x: 6, y: 6, z: -4}
   jumperPrefab: {fileID: 9181426319915624835, guid: a5d72db26b7219d44a6f056428a1cd9a, type: 3}
 --- !u!114 &5596137589397831374
 MonoBehaviour:
@@ -206,16 +205,8 @@ MonoBehaviour:
   spawnTransform: {fileID: 0}
   targetTransform: {fileID: 0}
   moveDuration: 10
-  waitDuration: 2
-  ragdollEnablePoint: 0
---- !u!81 &893904184192318715
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8940560441211067807}
-  m_Enabled: 1
+  waitDuration: 5
+  ragdollEnablePoint: 5
 --- !u!82 &6045988985092608534
 AudioSource:
   m_ObjectHideFlags: 0
