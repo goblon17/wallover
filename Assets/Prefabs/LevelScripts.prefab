@@ -142,7 +142,7 @@ MonoBehaviour:
     pairs:
     - Key:
         item: 0
-      Value: {x: 2, y: 0, z: -2}
+      Value: {x: -6, y: 0, z: -2}
     - Key:
         item: 1
       Value: {x: -2, y: 0, z: -2}

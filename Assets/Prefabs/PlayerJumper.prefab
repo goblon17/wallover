@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36840f357e00f3441875614147e7444c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpDuration: 2
+  jumpDuration: 1
   renderer: {fileID: 1732674811878372892}
 --- !u!1001 &446588701988814503
 PrefabInstance:

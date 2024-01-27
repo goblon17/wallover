@@ -9,6 +9,10 @@ public class PlayerInputAdapter : MonoBehaviour
     private PlayerLimbMover limbMover;
     [SerializeField]
     private PlayerBodyMover mover;
+    [SerializeField]
+    private PlayerBonesDataManager setterBonesManager;
+    [SerializeField]
+    private PlayerJumper jumper;
 
     private GameManager gameManager;
 
@@ -163,6 +167,11 @@ public class PlayerInputAdapter : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
+		if (!context.performed || gameManager.CurrentState != GameManager.State.Game)
+		{
+			return;
+		}
 
-    }
+        jumper.Jump(setterBonesManager.GetBonesData());
+	}
 }

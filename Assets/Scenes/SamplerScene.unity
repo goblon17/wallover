@@ -303,6 +303,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1040684833448616141, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
+      propertyPath: waitDuration
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1040684833448616141, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
       propertyPath: spawnTransform
       value: 
       objectReference: {fileID: 1356260438}

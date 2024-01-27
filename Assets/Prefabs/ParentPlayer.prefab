@@ -247,7 +247,19 @@ MonoBehaviour:
     m_ActionId: 7cadfe19-804e-4c9d-b53d-52d346eaf303
     m_ActionName: Player/Move Body[/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5045684929986752203}
+        m_TargetAssemblyTypeName: PlayerInputAdapter, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 491a1db8-5442-4c92-bb28-ebfedf33931a
     m_ActionName: Player/Jump
   m_NeverAutoSwitchControlSchemes: 1
@@ -269,6 +281,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   limbMover: {fileID: 2256853802066476009}
   mover: {fileID: 6568116653580418618}
+  setterBonesManager: {fileID: 86275860659877345}
+  jumper: {fileID: 7219883242395081182}
 --- !u!114 &2256853802066476009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,6 +373,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5d72db26b7219d44a6f056428a1cd9a, type: 3}
+--- !u!114 &7219883242395081182 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2971477394588018696, guid: a5d72db26b7219d44a6f056428a1cd9a, type: 3}
+  m_PrefabInstance: {fileID: 5552625512515678678}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36840f357e00f3441875614147e7444c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8122652717229502876 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4447189047346446410, guid: a5d72db26b7219d44a6f056428a1cd9a, type: 3}
@@ -429,6 +454,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3387903ae04769248b212b09c68c0813, type: 3}
+--- !u!114 &86275860659877345 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7727096321427636353, guid: 3387903ae04769248b212b09c68c0813, type: 3}
+  m_PrefabInstance: {fileID: 7642232922237220192}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185da71a441fe3d46bca55a205c6ea5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1675941230567099208 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9028743022440660520, guid: 3387903ae04769248b212b09c68c0813, type: 3}

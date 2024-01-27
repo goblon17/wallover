@@ -6,8 +6,6 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerBonesDataManager))]
 public class PlayerJumper : MonoBehaviour
 {
-	[SerializeField]
-	private float jumpDuration;
 
 	[SerializeField]
 	private Renderer renderer;
@@ -18,6 +16,7 @@ public class PlayerJumper : MonoBehaviour
 	private PlayerBonesData startPositions;
 	private PlayerBone[] bones;
 	private float currentJumpTime;
+	private float jumpDuration = 1;
 
 	public Material PlayerMaterial { set => renderer.material = value; }
 
@@ -49,6 +48,7 @@ public class PlayerJumper : MonoBehaviour
 			{
 				bone.transform.rotation = targetPositions.BonesData[bone.boneName];
 			}
+			transform.position = targetPositions.Root.Item1;
 			isJumping = false;
 		}
 		else
@@ -57,6 +57,7 @@ public class PlayerJumper : MonoBehaviour
 			{
 				bone.transform.rotation = Quaternion.Slerp(startPositions.BonesData[bone.boneName], targetPositions.BonesData[bone.boneName], currentJumpTime / jumpDuration);
 			}
+			transform.position = Vector3.Lerp(startPositions.Root.Item1, targetPositions.Root.Item1, -(currentJumpTime * currentJumpTime) + 2 * currentJumpTime * jumpDuration);
 		}
 	}
 }
