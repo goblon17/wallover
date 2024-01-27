@@ -44,10 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6fd113ae21abd94897418598659dfa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  r1: 0.7
-  r2: 0.7
+  firstBoneLength: 0.7
+  secondBoneLength: 0.7
   firstBone: {fileID: 5505379161666570832}
   secondBone: {fileID: 2187893777519903066}
+  UseSecondSolution: 0
 --- !u!1 &1079799036447438097
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,10 +745,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6fd113ae21abd94897418598659dfa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  r1: 0.7
-  r2: 0.7
+  firstBoneLength: 0.7
+  secondBoneLength: 0.7
   firstBone: {fileID: 8676935051110521156}
   secondBone: {fileID: 4868083328532546271}
+  UseSecondSolution: 0
 --- !u!1 &5540513370064077343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1068,10 +1070,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6fd113ae21abd94897418598659dfa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  r1: 0.5
-  r2: 0.5
+  firstBoneLength: 0.5
+  secondBoneLength: 0.5
   firstBone: {fileID: 6991201279274307510}
   secondBone: {fileID: 3494469921304004688}
+  UseSecondSolution: 0
 --- !u!1 &8594871207656733486
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,7 +1245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6fd113ae21abd94897418598659dfa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  r1: 0.5
-  r2: 0.5
+  firstBoneLength: 0.5
+  secondBoneLength: 0.5
   firstBone: {fileID: 6925380321225047732}
   secondBone: {fileID: 7264325968929401352}
+  UseSecondSolution: 0

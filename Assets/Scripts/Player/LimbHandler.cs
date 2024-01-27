@@ -6,10 +6,10 @@ using UnityEngine;
 public class LimbHandler : MonoBehaviour
 {
 	[SerializeField]
-	private float r1;
+	private float firstBoneLength;
 
 	[SerializeField]
-	private float r2;
+	private float secondBoneLength;
 
 	[SerializeField]
 	private Transform firstBone;
@@ -24,7 +24,7 @@ public class LimbHandler : MonoBehaviour
 	{
 		Vector2 firstBonePosition = FlattenVector(firstBone.position);
 		Vector2 handlerPosition = FlattenVector(transform.position);
-		int solutions = FindCircleCircleIntersections(firstBonePosition, r1, handlerPosition, r2, out intersections.a, out intersections.b);
+		int solutions = FindCircleCircleIntersections(firstBonePosition, firstBoneLength, handlerPosition, secondBoneLength, out intersections.a, out intersections.b);
 		if (solutions > 0)
 		{
 			Vector3 solution = Convexify(solutions == 0 || !UseSecondSolution ? intersections.a : intersections.b, firstBone.position.z);
@@ -106,6 +106,6 @@ public class LimbHandler : MonoBehaviour
 
 	public void MoveLimbByVector(Vector3 offset)
 	{
-		transform.position = firstBone.position + offset;
+		transform.position = firstBone.position + offset * (firstBoneLength + secondBoneLength);
 	}
 }

@@ -14,32 +14,27 @@ public class PlayerLimbMover : MonoBehaviour
     [SerializeField]
     private LimbHandler rightLeg;
 
-    [SerializeField]
-    private float armsLength;
-    [SerializeField]
-    private float legsLength;
-
     public void MoveLeftArm(Vector2 dir)
     {
-        Vector3 moveOffset = new Vector3(dir.x, dir.y, 0) * armsLength;
+        Vector3 moveOffset = new Vector3(dir.x, dir.y, 0);
         leftArm.MoveLimbByVector(moveOffset);
     }
 
     public void MoveRightArm(Vector2 dir)
     {
-        Vector3 moveOffset = new Vector3(dir.x, dir.y, 0) * armsLength;
+        Vector3 moveOffset = new Vector3(dir.x, dir.y, 0);
         rightArm.MoveLimbByVector(moveOffset);
     }
 
     public void MoveLeftLeg(Vector2 dir)
     {
-        Vector3 moveOffset = new Vector3(dir.x, dir.y, 0) * legsLength;
+        Vector3 moveOffset = new Vector3(dir.x, dir.y, 0);
         leftLeg.MoveLimbByVector(moveOffset);
     }
 
     public void MoveRightLeg(Vector2 dir)
     {
-        Vector3 moveOffset = new Vector3(dir.x, dir.y, 0) * legsLength;
+        Vector3 moveOffset = new Vector3(dir.x, dir.y, 0);
         rightLeg.MoveLimbByVector(moveOffset);
     }
 
