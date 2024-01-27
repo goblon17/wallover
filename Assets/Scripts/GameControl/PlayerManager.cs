@@ -11,22 +11,32 @@ public class PlayerManager : Singleton<PlayerManager>
     [SerializeField]
     private SerializedDictionary<PlayerColor, Material> playerMaterials;
 
+    [SerializeField]
+    private SerializedDictionary<PlayerColor, Vector3> jumpersPositions;
+
+	[SerializeField]
+	private SerializedDictionary<PlayerColor, Vector3> playersSpawnPositions;
+
+	[SerializeField]
+    private GameObject jumperPrefab;
+
     public int PlayerCount => players.Count;
 
-    private HashSet<PlayerColor> players;
-
+    private Dictionary<PlayerColor, PlayerJumper> jumpers;
+    private Dictionary<PlayerColor, PlayerBonesDataManager> players;
 
     protected override void Awake()
     {
         base.Awake();
-        players = new HashSet<PlayerColor>();
+        players = new Dictionary<PlayerColor, PlayerBonesDataManager>();
+        jumpers = new Dictionary<PlayerColor, PlayerJumper>();
     }
 
     private PlayerColor GetAvailableColor()
     {
         foreach (PlayerColor player in Enum.GetValues(typeof(PlayerColor)))
         {
-            if (!players.Contains(player))
+            if (!players.ContainsKey(player))
             {
                 return player;
             }
@@ -35,11 +45,27 @@ public class PlayerManager : Singleton<PlayerManager>
     }
 
     public void OnPlayerJoined(PlayerInput playerInput)
+	{
+		PlayerColor playerColor = GetAvailableColor();
+		players[playerColor] = playerInput.GetComponentInChildren<PlayerBonesDataManager>();
+		playerInput.GetComponent<PlayerData>().OnSpawn(playerColor, playerMaterials[playerColor]);
+        playerInput.transform.position = playersSpawnPositions[playerColor];
+        jumpers[playerColor] = playerInput.GetComponentInChildren<PlayerJumper>();
+        jumpers[playerColor].transform.position = jumpersPositions[playerColor];
+		jumpers[playerColor].PlayerMaterial = playerMaterials[playerColor];
+	}
+
+	public void SpawnJumpers()
     {
-        PlayerColor playerColor = GetAvailableColor();
-        players.Add(playerColor);
-        playerInput.GetComponent<PlayerData>().OnSpawn(playerColor, playerMaterials[playerColor]);
-    }
+		foreach (PlayerColor player in Enum.GetValues(typeof(PlayerColor)))
+        {
+			if (players.ContainsKey(player))
+            {
+				jumpers[player].gameObject.SetActive(true);
+                jumpers[player].Jump(players[player].GetBonesData());
+			}
+		}
+	}
 
     public void OnPlayerDeath()
     {

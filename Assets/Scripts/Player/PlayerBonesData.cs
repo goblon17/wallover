@@ -7,17 +7,17 @@ public class PlayerBonesData
     public enum PlayerBones
     {
         LeftLeg,
-        LeftForleg,
+        LeftForeleg,
         RightLeg,
-        RightForleg,
-		LeftArm,
-		LeftForArm,
-		RightArm,
-		RightForArm,
+        RightForeleg,
+		Leftarm,
+		LeftForearm,
+		Rightarm,
+		RightForearm,
         Pelvis,
         Spine
 	}
 
-    public Dictionary<PlayerBones, (Vector3, Quaternion)> BonesData = new Dictionary<PlayerBones, (Vector3, Quaternion)>();
+    public Dictionary<PlayerBones, Quaternion> BonesData = new Dictionary<PlayerBones, Quaternion>();
     public (Vector3, Quaternion) Root;
 }
