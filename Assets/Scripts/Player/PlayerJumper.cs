@@ -32,7 +32,6 @@ public class PlayerJumper : MonoBehaviour
 		isJumping = true;
 		targetPositions = targetPosition;
 		currentJumpTime = 0;
-		Debug.Log(targetPositions.Root.Item1);
 		//Turn off animation
 	}
 
