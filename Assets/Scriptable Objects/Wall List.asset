@@ -39,5 +39,25 @@ MonoBehaviour:
   - mesh: {fileID: -6382672474699200910, guid: f003e35c8538cd54993aa1f861a2ce06, type: 3}
     meta: 0
   wallMaterials:
-  - material: {fileID: 2100000, guid: c53754fd69c5ec34f93b1f00d286601f, type: 2}
+  - material: {fileID: 2100000, guid: bf1c5b257a54fb04c9be59962f5849e8, type: 2}
     meta: 0
+  - material: {fileID: 2100000, guid: e4b612f4e8eb4ff4787720588a4ef82a, type: 2}
+    meta: 0
+  - material: {fileID: 2100000, guid: 9b8c9f259ea7b714db553a55981eeed8, type: 2}
+    meta: 1
+  - material: {fileID: 2100000, guid: aa82f2b5a8788be4bb70dd12b782b7f9, type: 2}
+    meta: 4
+  - material: {fileID: 2100000, guid: 0afc441f9f11fc44280bcd3be4d97130, type: 2}
+    meta: 0
+  - material: {fileID: 2100000, guid: 27372dda33438a64880e41383ec0b489, type: 2}
+    meta: 0
+  - material: {fileID: 2100000, guid: 5db06e1a5fc28de41a9d7e42610aca17, type: 2}
+    meta: 0
+  - material: {fileID: 2100000, guid: 1b7d0904226c3304cb72dc9a5a40ac99, type: 2}
+    meta: 0
+  - material: {fileID: 2100000, guid: 4dc59c220993a164a9e7cad7478edbe1, type: 2}
+    meta: 3
+  - material: {fileID: 2100000, guid: e6066681f8a8529428f2c126bfc102f9, type: 2}
+    meta: 2
+  - material: {fileID: 2100000, guid: 6a5468a2db8915f4885cfe46ec240fad, type: 2}
+    meta: 5
