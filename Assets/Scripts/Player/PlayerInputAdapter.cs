@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(PlayerInput))]
 public class PlayerInputAdapter : MonoBehaviour
 {
+    [SerializeField]
+    private PlayerLimbMover limbMover;
+    [SerializeField]
+    private PlayerMover mover;
+
     public event System.Action NoLimbSelectedEvent;
 
     private bool useLeftArm = false;
@@ -18,11 +22,11 @@ public class PlayerInputAdapter : MonoBehaviour
         Vector2 input = context.ReadValue<Vector2>();
         if (useLeftArm)
         {
-            //limbMover.MoveLeftArm(input);
+            limbMover.MoveLeftArm(input);
         }
         if (useLeftLeg)
         {
-            //limbMover.MoveLeftLeg(input);
+            limbMover.MoveLeftLeg(input);
         }
     }
 
@@ -31,11 +35,11 @@ public class PlayerInputAdapter : MonoBehaviour
         Vector2 input = context.ReadValue<Vector2>();
         if (useRightArm)
         {
-            //limbMover.MoveRightArm(input);
+            limbMover.MoveRightArm(input);
         }
         if (useRightLeg)
         {
-            //limbMover.MoveRightLeg(input);
+            limbMover.MoveRightLeg(input);
         }
     }
 
@@ -74,5 +78,49 @@ public class PlayerInputAdapter : MonoBehaviour
         {
             NoLimbSelectedEvent?.Invoke();
         }
+    }
+
+    public void InvertLeftLimb(InputAction.CallbackContext context)
+    {
+        if (!context.performed)
+        {
+            return;
+        }
+
+        if (useLeftArm)
+        {
+            limbMover.InvertLeftArm();
+        }
+        if (useLeftLeg)
+        {
+            limbMover.InvertLeftLeg();
+        }
+    }
+
+    public void InvertRightLimb(InputAction.CallbackContext context)
+    {
+        if (!context.performed)
+        {
+            return;
+        }
+
+        if (useRightArm)
+        {
+            limbMover.InvertRightArm();
+        }
+        if (useRightLeg)
+        {
+            limbMover.InvertRightLeg();
+        }
+    }
+
+    public void MoveBody(InputAction.CallbackContext context)
+    {
+        if (!context.performed)
+        {
+            return;
+        }
+
+        mover.MoveBody();
     }
 }

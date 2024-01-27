@@ -103,4 +103,9 @@ public class LimbHandler : MonoBehaviour
 			return 2;
 		}
 	}
+
+	public void MoveLimbByVector(Vector3 offset)
+	{
+		transform.position = firstBone.position + offset;
+	}
 }
