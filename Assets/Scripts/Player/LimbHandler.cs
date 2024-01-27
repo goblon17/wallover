@@ -18,15 +18,18 @@ public class LimbHandler : MonoBehaviour
 	private Transform secondBone;
 
 	private (Vector2 a, Vector2 b) intersections;
+	public bool UseSecondSolution = false;
 
 	private void Update()
 	{
 		Vector2 firstBonePosition = FlattenVector(firstBone.position);
 		Vector2 handlerPosition = FlattenVector(transform.position);
-		if (FindCircleCircleIntersections(firstBonePosition, r1, handlerPosition, r2, out intersections.a, out intersections.b) > 0)
+		int solutions = FindCircleCircleIntersections(firstBonePosition, r1, handlerPosition, r2, out intersections.a, out intersections.b);
+		if (solutions > 0)
 		{
-			firstBone.forward = Convexify(intersections.a, firstBone.position.z) - firstBone.position;
-			secondBone.position = Convexify(intersections.a, secondBone.position.z);
+			Vector3 solution = Convexify(solutions == 0 || !UseSecondSolution ? intersections.a : intersections.b, firstBone.position.z);
+			firstBone.forward = solution - firstBone.position;
+			secondBone.position = solution;
 			secondBone.forward = transform.position - secondBone.position;
 		}
 	}
