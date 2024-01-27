@@ -281,7 +281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   limbMover: {fileID: 2256853802066476009}
   mover: {fileID: 6568116653580418618}
-  setterBonesManager: {fileID: 86275860659877345}
+  setterBonesManager: {fileID: 5827498940984008939}
   jumper: {fileID: 7219883242395081182}
 --- !u!114 &2256853802066476009
 MonoBehaviour:
@@ -454,17 +454,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3387903ae04769248b212b09c68c0813, type: 3}
---- !u!114 &86275860659877345 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7727096321427636353, guid: 3387903ae04769248b212b09c68c0813, type: 3}
-  m_PrefabInstance: {fileID: 7642232922237220192}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 185da71a441fe3d46bca55a205c6ea5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1675941230567099208 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9028743022440660520, guid: 3387903ae04769248b212b09c68c0813, type: 3}
@@ -512,6 +501,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6fd113ae21abd94897418598659dfa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5827498940984008939 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4238385549027546507, guid: 3387903ae04769248b212b09c68c0813, type: 3}
+  m_PrefabInstance: {fileID: 7642232922237220192}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185da71a441fe3d46bca55a205c6ea5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &6568116653580418618 stripped
