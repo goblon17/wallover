@@ -18,6 +18,10 @@ public class WallManager : Singleton<WallManager>
     [SerializeField]
     private float waitDuration;
 
+    private GameObject currentWall;
+    private WallList.MeshMeta meshMeta;
+    private WallList.MaterialMeta materialMeta;
+
     private Coroutine currentCoroutine = null;
 
     protected override void Awake()
@@ -48,8 +52,8 @@ public class WallManager : Singleton<WallManager>
     {
         while (true)
         {
-            Transform wallTransform = walls.GetRandomWall().transform;
-            wallTransform.position = spawnTransform.position;
+            (currentWall, meshMeta, materialMeta) = walls.GetRandomWall();
+            currentWall.transform.position = spawnTransform.position;
 
             yield return new WaitForSeconds(waitDuration);
 
@@ -57,11 +61,11 @@ public class WallManager : Singleton<WallManager>
             while ((counter += Time.deltaTime) <= moveDuration)
             {
                 float t = counter / moveDuration;
-                wallTransform.position = Vector3.Lerp(spawnTransform.position, targetTransform.position, t);
+                currentWall.transform.position = Vector3.Lerp(spawnTransform.position, targetTransform.position, t);
 
                 yield return null;
             }
-            Destroy(wallTransform.gameObject);
+            Destroy(currentWall);
         }
     }
 
