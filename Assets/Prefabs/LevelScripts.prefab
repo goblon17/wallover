@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6103239972671830485}
   - component: {fileID: 3688213378428409996}
   - component: {fileID: 5596137589397831374}
+  - component: {fileID: 1040684833448616141}
   m_Layer: 0
   m_Name: LevelScripts
   m_TagString: Untagged
@@ -156,3 +157,21 @@ MonoBehaviour:
   playerCount: {fileID: 0}
   countdown: {fileID: 0}
   timeToJoin: 10
+--- !u!114 &1040684833448616141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8940560441211067807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37a65e438585edf46a8309ad0cfd63f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 6103239972671830485}
+  walls: {fileID: 11400000, guid: 8397dcd234af7d44287af4bf5a4d3569, type: 2}
+  spawnTransform: {fileID: 0}
+  targetTransform: {fileID: 0}
+  moveDuration: 10
+  waitDuration: 2
