@@ -8,9 +8,13 @@ public class PlayerManager : Singleton<PlayerManager>
 {
     public enum PlayerColor { Red, Blue, Green, Yellow };
 
+    [SerializeField]
+    private SerializedDictionary<PlayerColor, Material> playerMaterials;
+
     public int PlayerCount => players.Count;
 
     private HashSet<PlayerColor> players;
+
 
     protected override void Awake()
     {
