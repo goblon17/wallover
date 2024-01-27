@@ -33,6 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3460503195938992346}
+  - {fileID: 8122652717229502876}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -245,6 +246,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7cadfe19-804e-4c9d-b53d-52d346eaf303
     m_ActionName: Player/Move Body[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 491a1db8-5442-4c92-bb28-ebfedf33931a
+    m_ActionName: Player/Jump
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
@@ -293,6 +298,72 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderer: {fileID: 7810988356096661662}
+--- !u!1001 &5552625512515678678
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4198176687176247266}
+    m_Modifications:
+    - target: {fileID: 4447189047346446410, guid: a5d72db26b7219d44a6f056428a1cd9a, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447189047346446410, guid: a5d72db26b7219d44a6f056428a1cd9a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447189047346446410, guid: a5d72db26b7219d44a6f056428a1cd9a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447189047346446410, guid: a5d72db26b7219d44a6f056428a1cd9a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447189047346446410, guid: a5d72db26b7219d44a6f056428a1cd9a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447189047346446410, guid: a5d72db26b7219d44a6f056428a1cd9a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447189047346446410, guid: a5d72db26b7219d44a6f056428a1cd9a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447189047346446410, guid: a5d72db26b7219d44a6f056428a1cd9a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447189047346446410, guid: a5d72db26b7219d44a6f056428a1cd9a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447189047346446410, guid: a5d72db26b7219d44a6f056428a1cd9a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447189047346446410, guid: a5d72db26b7219d44a6f056428a1cd9a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9181426319915624835, guid: a5d72db26b7219d44a6f056428a1cd9a, type: 3}
+      propertyPath: m_Name
+      value: PlayerJumper
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a5d72db26b7219d44a6f056428a1cd9a, type: 3}
+--- !u!4 &8122652717229502876 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4447189047346446410, guid: a5d72db26b7219d44a6f056428a1cd9a, type: 3}
+  m_PrefabInstance: {fileID: 5552625512515678678}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7642232922237220192
 PrefabInstance:
   m_ObjectHideFlags: 0

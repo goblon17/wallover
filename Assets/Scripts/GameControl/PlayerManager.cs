@@ -50,15 +50,9 @@ public class PlayerManager : Singleton<PlayerManager>
 		players[playerColor] = playerInput.GetComponentInChildren<PlayerBonesDataManager>();
 		playerInput.GetComponent<PlayerData>().OnSpawn(playerColor, playerMaterials[playerColor]);
         playerInput.transform.position = playersSpawnPositions[playerColor];
-		InitJumper(playerColor);
-
-	}
-
-	private void InitJumper(PlayerColor playerColor)
-	{
-		jumpers[playerColor] = Instantiate(jumperPrefab, jumpersPositions[playerColor], Quaternion.identity).GetComponent<PlayerJumper>();
+        jumpers[playerColor] = playerInput.GetComponentInChildren<PlayerJumper>();
+        jumpers[playerColor].transform.position = jumpersPositions[playerColor];
 		jumpers[playerColor].PlayerMaterial = playerMaterials[playerColor];
-		jumpers[playerColor].gameObject.SetActive(false);
 	}
 
 	public void SpawnJumpers()

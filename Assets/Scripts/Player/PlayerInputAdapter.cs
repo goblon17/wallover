@@ -160,4 +160,9 @@ public class PlayerInputAdapter : MonoBehaviour
 
         mover.MoveBody();
     }
+
+    public void Jump(InputAction.CallbackContext context)
+    {
+
+    }
 }

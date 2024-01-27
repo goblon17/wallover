@@ -310,86 +310,6 @@ PrefabInstance:
       propertyPath: targetTransform
       value: 
       objectReference: {fileID: 948592306}
-    - target: {fileID: 3688213378428409996, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: jumpersPositions.pairs.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3688213378428409996, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: playersSpawnPositions.pairs.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3688213378428409996, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: jumpersPositions.pairs.Array.data[0].Value.x
-      value: -6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3688213378428409996, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: jumpersPositions.pairs.Array.data[1].Value.x
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3688213378428409996, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: jumpersPositions.pairs.Array.data[2].Value.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3688213378428409996, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: jumpersPositions.pairs.Array.data[3].Value.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3688213378428409996, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: jumpersPositions.pairs.Array.data[1].Key.item
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3688213378428409996, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: jumpersPositions.pairs.Array.data[2].Key.item
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3688213378428409996, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: jumpersPositions.pairs.Array.data[3].Key.item
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3688213378428409996, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: playersSpawnPositions.pairs.Array.data[0].Value.x
-      value: -6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3688213378428409996, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: playersSpawnPositions.pairs.Array.data[0].Value.y
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3688213378428409996, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: playersSpawnPositions.pairs.Array.data[1].Value.x
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3688213378428409996, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: playersSpawnPositions.pairs.Array.data[1].Value.y
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3688213378428409996, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: playersSpawnPositions.pairs.Array.data[2].Value.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3688213378428409996, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: playersSpawnPositions.pairs.Array.data[2].Value.y
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3688213378428409996, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: playersSpawnPositions.pairs.Array.data[3].Value.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3688213378428409996, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: playersSpawnPositions.pairs.Array.data[3].Value.y
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3688213378428409996, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: playersSpawnPositions.pairs.Array.data[1].Key.item
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3688213378428409996, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: playersSpawnPositions.pairs.Array.data[2].Key.item
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3688213378428409996, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: playersSpawnPositions.pairs.Array.data[3].Key.item
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5596137589397831374, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
       propertyPath: countdown
       value: 
@@ -1529,7 +1449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8006182265780050594, guid: 7431ab8ee4c25eb43a26caa4fb6672f4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
