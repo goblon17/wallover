@@ -28,10 +28,16 @@ public class LimbHandler : MonoBehaviour
 		if (solutions > 0)
 		{
 			Vector3 solution = Convexify(solutions == 0 || !UseSecondSolution ? intersections.a : intersections.b, firstBone.position.z);
-			firstBone.forward = solution - firstBone.position;
+			firstBone.forward = -(solution - firstBone.position);
 			secondBone.position = solution;
-			secondBone.forward = transform.position - secondBone.position;
+			secondBone.forward = -(transform.position - secondBone.position);
 		}
+	}
+
+	private Quaternion RemoveZRotation(Quaternion rotation)
+	{
+		Vector3 euler = rotation.eulerAngles;
+		return Quaternion.Euler(euler.x, euler.y, 0);
 	}
 
 	private Vector2 FlattenVector(Vector3 v)

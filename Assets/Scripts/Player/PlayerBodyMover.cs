@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class PlayerMover : MonoBehaviour
+public class PlayerBodyMover : MonoBehaviour
 {
 	[SerializeField]
 	private PlayerInputAdapter playerInputAdapter;
@@ -24,10 +24,8 @@ public class PlayerMover : MonoBehaviour
 	[SerializeField]
 	private Transform core;
 
-	private void Start()
-	{
-		
-	}
+	[SerializeField]
+	private float bodyYOffset;
 
 	public void MoveBody()
 	{
@@ -37,7 +35,7 @@ public class PlayerMover : MonoBehaviour
 		{
 			corePosition += position;
 		}
-		core.position = new Vector3(corePosition.x/4, corePosition.y/4, corePosition.z/4);
+		core.position = new Vector3(corePosition.x/4, corePosition.y/4 + bodyYOffset, corePosition.z/4);
 		leftFootHandler.position = limbsPositions[0];
 		rightFootHandler.position = limbsPositions[1];
 		leftHandHandler.position = limbsPositions[2];
