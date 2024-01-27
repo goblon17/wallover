@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,6 +21,9 @@ public class PlayerManager : Singleton<PlayerManager>
 	[SerializeField]
     private GameObject jumperPrefab;
 
+    public HashSet<PlayerColor> PlayersKilledThisRound { get; private set; } = new HashSet<PlayerColor>();
+    public HashSet<PlayerColor> PlayersLeft { get; private set; } = new HashSet<PlayerColor>();
+
     public int PlayerCount => players.Count;
 
     private Dictionary<PlayerColor, PlayerJumper> jumpers;
@@ -30,9 +34,15 @@ public class PlayerManager : Singleton<PlayerManager>
         base.Awake();
         players = new Dictionary<PlayerColor, PlayerBonesDataManager>();
         jumpers = new Dictionary<PlayerColor, PlayerJumper>();
+		WallManager.Instance.WallStartedEvent += OnWallStarted;
     }
 
-    private PlayerColor GetAvailableColor()
+	private void OnWallStarted()
+	{
+        PlayersKilledThisRound.Clear();
+	}
+
+	private PlayerColor GetAvailableColor()
     {
         foreach (PlayerColor player in Enum.GetValues(typeof(PlayerColor)))
         {
@@ -54,10 +64,13 @@ public class PlayerManager : Singleton<PlayerManager>
         jumpers[playerColor].transform.position = jumpersPositions[playerColor];
 		jumpers[playerColor].PlayerMaterial = playerMaterials[playerColor];
         jumpers[playerColor].Color = playerColor;
+        PlayersLeft.Add(playerColor);
 	}
 
     public void OnPlayerDeath(PlayerColor color)
     {
         Debug.Log($"Player {color} died");
+        PlayersLeft.Remove(color);
+        PlayersKilledThisRound.Add(color);
     }
 }

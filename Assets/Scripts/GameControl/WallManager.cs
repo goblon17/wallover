@@ -22,6 +22,8 @@ public class WallManager : Singleton<WallManager>
     private float ragdollEnablePoint;
 
     public event Action EnableRagdollEvent;
+    public event Action WallEndedEvent;
+    public event Action WallStartedEvent;
 
     private GameObject currentWall;
     private WallList.MeshMeta meshMeta;
@@ -59,8 +61,10 @@ public class WallManager : Singleton<WallManager>
         {
             (currentWall, meshMeta, materialMeta) = walls.GetRandomWall();
             currentWall.transform.position = spawnTransform.position;
+            WallStartedEvent?.Invoke();
+            Debug.Log("Wall started");
 
-            yield return new WaitForSeconds(waitDuration);
+			yield return new WaitForSeconds(waitDuration);
 
             float counter = 0;
             bool enabledRagdoll = false;
@@ -75,6 +79,9 @@ public class WallManager : Singleton<WallManager>
                 }
                 yield return null;
             }
+
+            Debug.Log("Wall ended");
+            WallEndedEvent?.Invoke();
             Destroy(currentWall);
         }
     }
