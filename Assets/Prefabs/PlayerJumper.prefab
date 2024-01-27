@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4447189047346446410}
-  - component: {fileID: 5879754132901128223}
   - component: {fileID: 2971477394588018696}
   m_Layer: 0
   m_Name: PlayerJumper
@@ -34,18 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5879754132901128223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9181426319915624835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 185da71a441fe3d46bca55a205c6ea5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2971477394588018696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,8 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36840f357e00f3441875614147e7444c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpDuration: 1
   renderer: {fileID: 1732674811878372892}
+  ragdollPrefab: {fileID: 9176485096983755683, guid: 665fc30a22bb3e949b9bec8ea0e296d3, type: 3}
+  bonesDataManager: {fileID: 7386787971813131158}
 --- !u!1001 &446588701988814503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131,3 +119,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1767451438392981886, guid: 30309576ee67bf64ebd3f5c0ea6e6247, type: 3}
   m_PrefabInstance: {fileID: 446588701988814503}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7386787971813131158 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6967559593831578929, guid: 30309576ee67bf64ebd3f5c0ea6e6247, type: 3}
+  m_PrefabInstance: {fileID: 446588701988814503}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185da71a441fe3d46bca55a205c6ea5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

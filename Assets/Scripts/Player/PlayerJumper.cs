@@ -1,30 +1,31 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerBonesDataManager))]
-public class PlayerJumper : MonoBehaviour
+public class PlayerJumper : PlayerMaterialSetter
 {
+	[SerializeField]
+	private GameObject ragdollPrefab;
 
 	[SerializeField]
-	private Renderer renderer;
+	private PlayerBonesDataManager bonesDataManager;
 
-	PlayerBonesDataManager bonesDataManager;
 	private bool isJumping;
 	private PlayerBonesData targetPositions;
 	private PlayerBonesData startPositions;
+	private PlayerBonesDataManager ragdoll;
 	private PlayerBone[] bones;
 	private float currentJumpTime;
 	private float jumpDuration = 1;
 
-	public Material PlayerMaterial { set => renderer.material = value; }
-
 	private void Start()
 	{
 		bones = GetComponentsInChildren<PlayerBone>();
-		bonesDataManager = GetComponent<PlayerBonesDataManager>();
 		startPositions = bonesDataManager.GetBonesData();
+		ragdoll = Instantiate(ragdollPrefab).GetComponentInChildren<PlayerBonesDataManager>();
+		ragdoll.gameObject.SetActive(false);
 	}
 
 	public void Jump(PlayerBonesData targetPosition)
@@ -50,6 +51,7 @@ public class PlayerJumper : MonoBehaviour
 			}
 			transform.position = targetPositions.Root.Item1;
 			isJumping = false;
+			ShowRagdoll();
 		}
 		else
 		{
@@ -59,5 +61,17 @@ public class PlayerJumper : MonoBehaviour
 			}
 			transform.position = Vector3.Lerp(startPositions.Root.Item1, targetPositions.Root.Item1, -(currentJumpTime * currentJumpTime) + 2 * currentJumpTime * jumpDuration);
 		}
+	}
+
+	private void ShowRagdoll()
+	{
+		ragdoll.gameObject.SetActive(true);
+		ragdoll.Apply(targetPositions);
+		Rigidbody[] ragdollRb = ragdoll.GetComponentsInChildren<Rigidbody>();
+		foreach (Rigidbody rb in ragdollRb)
+		{
+			rb.isKinematic = false;
+		}
+		ragdoll.GetComponent<PlayerMaterialSetter>().PlayerMaterial = renderer.material;
 	}
 }

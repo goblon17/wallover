@@ -319,6 +319,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6718279362049329455}
     - target: {fileID: 5596137589397831374, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
+      propertyPath: timeToJoin
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596137589397831374, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
       propertyPath: playerCount
       value: 
       objectReference: {fileID: 6718279362049329456}
