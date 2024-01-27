@@ -13,6 +13,7 @@ public class PlayerJumper : PlayerMaterialSetter
 	private PlayerBonesDataManager bonesDataManager;
 
 	private bool isJumping;
+	private bool ragdollShown = false;
 	private PlayerBonesData targetPositions;
 	private PlayerBonesData startPositions;
 	private PlayerBonesDataManager ragdoll;
@@ -26,6 +27,7 @@ public class PlayerJumper : PlayerMaterialSetter
 		startPositions = bonesDataManager.GetBonesData();
 		ragdoll = Instantiate(ragdollPrefab).GetComponentInChildren<PlayerBonesDataManager>();
 		ragdoll.gameObject.SetActive(false);
+		WallManager.Instance.EnableRagdollEvent += ShowRagdoll;
 	}
 
 	public void Jump(PlayerBonesData targetPosition)
@@ -33,7 +35,6 @@ public class PlayerJumper : PlayerMaterialSetter
 		isJumping = true;
 		targetPositions = targetPosition;
 		currentJumpTime = 0;
-		//Turn off animation
 	}
 
 	private void Update()
@@ -65,13 +66,20 @@ public class PlayerJumper : PlayerMaterialSetter
 
 	private void ShowRagdoll()
 	{
+		if(ragdollShown)
+		{
+			return;
+		}
+		isJumping = false;
 		ragdoll.gameObject.SetActive(true);
-		ragdoll.Apply(targetPositions);
+		ragdoll.Apply(bonesDataManager.GetBonesData());
 		Rigidbody[] ragdollRb = ragdoll.GetComponentsInChildren<Rigidbody>();
 		foreach (Rigidbody rb in ragdollRb)
 		{
 			rb.isKinematic = false;
 		}
 		ragdoll.GetComponent<PlayerMaterialSetter>().PlayerMaterial = renderer.material;
+		ragdollShown = true;
+		renderer.enabled = false;
 	}
 }

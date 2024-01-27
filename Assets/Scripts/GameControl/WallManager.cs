@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -17,6 +18,10 @@ public class WallManager : Singleton<WallManager>
     private float moveDuration;
     [SerializeField]
     private float waitDuration;
+    [SerializeField]
+    private float ragdollEnablePoint;
+
+    public event Action EnableRagdollEvent;
 
     private GameObject currentWall;
     private WallList.MeshMeta meshMeta;
@@ -58,11 +63,16 @@ public class WallManager : Singleton<WallManager>
             yield return new WaitForSeconds(waitDuration);
 
             float counter = 0;
+            bool enabledRagdoll = false;
             while ((counter += Time.deltaTime) <= moveDuration)
             {
                 float t = counter / moveDuration;
                 currentWall.transform.position = Vector3.Lerp(spawnTransform.position, targetTransform.position, t);
-
+                if(!enabledRagdoll && counter > ragdollEnablePoint)
+                {
+                    enabledRagdoll = true;
+                    EnableRagdollEvent?.Invoke();
+                }
                 yield return null;
             }
             Destroy(currentWall);

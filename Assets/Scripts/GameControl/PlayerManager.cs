@@ -55,18 +55,6 @@ public class PlayerManager : Singleton<PlayerManager>
 		jumpers[playerColor].PlayerMaterial = playerMaterials[playerColor];
 	}
 
-	public void SpawnJumpers()
-    {
-		foreach (PlayerColor player in Enum.GetValues(typeof(PlayerColor)))
-        {
-			if (players.ContainsKey(player))
-            {
-				jumpers[player].gameObject.SetActive(true);
-                jumpers[player].Jump(players[player].GetBonesData());
-			}
-		}
-	}
-
     public void OnPlayerDeath()
     {
 
