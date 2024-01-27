@@ -12,21 +12,24 @@ public class PlayerManager : Singleton<PlayerManager>
     private SerializedDictionary<PlayerColor, Material> playerMaterials;
 
     [SerializeField]
-    private SerializedDictionary<PlayerColor, PlayerJumper> playerJumpers; 
+    private SerializedDictionary<PlayerColor, Vector3> jumpersPositions;
+
+	[SerializeField]
+	private SerializedDictionary<PlayerColor, Vector3> playersSpawnPositions;
+
+	[SerializeField]
+    private GameObject jumperPrefab;
 
     public int PlayerCount => players.Count;
 
+    private Dictionary<PlayerColor, PlayerJumper> jumpers;
     private Dictionary<PlayerColor, PlayerBonesDataManager> players;
-
 
     protected override void Awake()
     {
         base.Awake();
         players = new Dictionary<PlayerColor, PlayerBonesDataManager>();
-        foreach (PlayerJumper jumper in playerJumpers.Values)
-        {
-            jumper.gameObject.SetActive(false);
-        }
+        jumpers = new Dictionary<PlayerColor, PlayerJumper>();
     }
 
     private PlayerColor GetAvailableColor()
@@ -42,20 +45,30 @@ public class PlayerManager : Singleton<PlayerManager>
     }
 
     public void OnPlayerJoined(PlayerInput playerInput)
-    {
-        PlayerColor playerColor = GetAvailableColor();
-        players[playerColor] = playerInput.GetComponentInChildren<PlayerBonesDataManager>();
-        playerInput.GetComponent<PlayerData>().OnSpawn(playerColor, playerMaterials[playerColor]);
-    }
+	{
+		PlayerColor playerColor = GetAvailableColor();
+		players[playerColor] = playerInput.GetComponentInChildren<PlayerBonesDataManager>();
+		playerInput.GetComponent<PlayerData>().OnSpawn(playerColor, playerMaterials[playerColor]);
+        playerInput.transform.position = playersSpawnPositions[playerColor];
+		InitJumper(playerColor);
 
-    public void SpawnJumpers()
+	}
+
+	private void InitJumper(PlayerColor playerColor)
+	{
+		jumpers[playerColor] = Instantiate(jumperPrefab, jumpersPositions[playerColor], Quaternion.identity).GetComponent<PlayerJumper>();
+		jumpers[playerColor].PlayerMaterial = playerMaterials[playerColor];
+		jumpers[playerColor].gameObject.SetActive(false);
+	}
+
+	public void SpawnJumpers()
     {
 		foreach (PlayerColor player in Enum.GetValues(typeof(PlayerColor)))
         {
 			if (players.ContainsKey(player))
             {
-				playerJumpers[player].gameObject.SetActive(true);
-                playerJumpers[player].Jump(players[player].GetBonesData());
+				jumpers[player].gameObject.SetActive(true);
+                jumpers[player].Jump(players[player].GetBonesData());
 			}
 		}
 	}

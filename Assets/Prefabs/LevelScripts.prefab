@@ -138,6 +138,9 @@ MonoBehaviour:
     - Key:
         item: 3
       Value: {fileID: 2100000, guid: 24a3bf94c4901ac489eba2fcb96cbbff, type: 2}
+  jumpersPositions:
+    pairs: []
+  jumperPrefab: {fileID: 9181426319915624835, guid: a5d72db26b7219d44a6f056428a1cd9a, type: 3}
 --- !u!114 &5596137589397831374
 MonoBehaviour:
   m_ObjectHideFlags: 0

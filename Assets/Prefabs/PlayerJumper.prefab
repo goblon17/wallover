@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpDuration: 2
+  renderer: {fileID: 1732674811878372892}
 --- !u!1001 &446588701988814503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -120,6 +121,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30309576ee67bf64ebd3f5c0ea6e6247, type: 3}
+--- !u!137 &1732674811878372892 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2177816430936328379, guid: 30309576ee67bf64ebd3f5c0ea6e6247, type: 3}
+  m_PrefabInstance: {fileID: 446588701988814503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2212856996943906777 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1767451438392981886, guid: 30309576ee67bf64ebd3f5c0ea6e6247, type: 3}

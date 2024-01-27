@@ -9,12 +9,17 @@ public class PlayerJumper : MonoBehaviour
 	[SerializeField]
 	private float jumpDuration;
 
+	[SerializeField]
+	private Renderer renderer;
+
 	PlayerBonesDataManager bonesDataManager;
 	private bool isJumping;
 	private PlayerBonesData targetPositions;
 	private PlayerBonesData startPositions;
 	private PlayerBone[] bones;
 	private float currentJumpTime;
+
+	public Material PlayerMaterial { set => renderer.material = value; }
 
 	private void Start()
 	{
