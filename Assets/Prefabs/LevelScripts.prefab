@@ -50,7 +50,7 @@ MonoBehaviour:
   m_NotificationBehavior: 2
   m_MaxPlayerCount: -1
   m_AllowJoining: 1
-  m_JoinBehavior: 0
+  m_JoinBehavior: 1
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls:
@@ -72,16 +72,24 @@ MonoBehaviour:
   m_JoinAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Join
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 016a791e-254e-4285-a87f-207ae456983d
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings: []
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: d7002157-7446-467e-9e6e-8f38d6d562d2
+        m_Path: <Gamepad>/start
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Join
+        m_Flags: 0
       m_Flags: 0
     m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 0}
+  m_PlayerPrefab: {fileID: 4124543016897803147, guid: cd7a61b9f3e5736488c5c0b57f8f7d53, type: 3}
   m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 0
   m_FixedNumberOfSplitScreens: -1
@@ -115,6 +123,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f050b929e5c17c34ba5d4374c029c3e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMaterials:
+    pairs:
+    - Key:
+        item: 0
+      Value: {fileID: 2100000, guid: c39dc3df70e7f7d4ba9d15c5b57a39f8, type: 2}
+    - Key:
+        item: 1
+      Value: {fileID: 2100000, guid: a6da9da1d09490b4890f17024a73131a, type: 2}
+    - Key:
+        item: 2
+      Value: {fileID: 2100000, guid: 202ba0b89bbba574389b062da0d52198, type: 2}
+    - Key:
+        item: 3
+      Value: {fileID: 2100000, guid: 24a3bf94c4901ac489eba2fcb96cbbff, type: 2}
 --- !u!114 &5596137589397831374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 6103239972671830485}
   playerManager: {fileID: 3688213378428409996}
+  playerInputManager: {fileID: 7508241447283816210}
   playersJoiningPanel: {fileID: 0}
   playerCount: {fileID: 0}
   countdown: {fileID: 0}

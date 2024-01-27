@@ -38,6 +38,7 @@ public class PlayerManager : Singleton<PlayerManager>
     {
         PlayerColor playerColor = GetAvailableColor();
         players.Add(playerColor);
+        playerInput.GetComponent<PlayerData>().OnSpawn(playerColor, playerMaterials[playerColor]);
     }
 
     public void OnPlayerDeath()

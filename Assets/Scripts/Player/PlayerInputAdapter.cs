@@ -10,6 +10,9 @@ public class PlayerInputAdapter : MonoBehaviour
     [SerializeField]
     private PlayerBodyMover mover;
 
+    [SerializeField]
+    private GameManager gameManager;
+
     public event System.Action NoLimbSelectedEvent;
 
     private bool useLeftArm = false;
@@ -17,8 +20,18 @@ public class PlayerInputAdapter : MonoBehaviour
     private bool useLeftLeg = false;
     private bool useRightLeg = false;
 
+    private void Start()
+    {
+        gameManager = GameManager.Instance;
+    }
+
     public void MoveLeftLimb(InputAction.CallbackContext context)
     {
+        if (gameManager.CurrentState != GameManager.State.Game)
+        {
+            return;
+        }
+
         Vector2 input = context.ReadValue<Vector2>();
         if (useLeftArm)
         {
@@ -32,6 +45,11 @@ public class PlayerInputAdapter : MonoBehaviour
 
     public void MoveRightLimb(InputAction.CallbackContext context)
     {
+        if (gameManager.CurrentState != GameManager.State.Game)
+        {
+            return;
+        }
+
         Vector2 input = context.ReadValue<Vector2>();
         if (useRightArm)
         {
@@ -45,6 +63,11 @@ public class PlayerInputAdapter : MonoBehaviour
 
     public void LeftLeg(InputAction.CallbackContext context)
     {
+        if (gameManager.CurrentState != GameManager.State.Game)
+        {
+            return;
+        }
+
         float value = context.ReadValue<float>();
         useLeftLeg = value > 0.5f;
         CheckIfNoLimbIsSelected();
@@ -52,6 +75,11 @@ public class PlayerInputAdapter : MonoBehaviour
 
     public void RightLeg(InputAction.CallbackContext context)
     {
+        if (gameManager.CurrentState != GameManager.State.Game)
+        {
+            return;
+        }
+
         float value = context.ReadValue<float>();
         useRightLeg = value > 0.5f;
         CheckIfNoLimbIsSelected();
@@ -59,12 +87,22 @@ public class PlayerInputAdapter : MonoBehaviour
 
     public void LeftArm(InputAction.CallbackContext context)
     {
+        if (gameManager.CurrentState != GameManager.State.Game)
+        {
+            return;
+        }
+
         useLeftArm = !context.canceled;
         CheckIfNoLimbIsSelected();
     }
 
     public void RightArm(InputAction.CallbackContext context)
     {
+        if (gameManager.CurrentState != GameManager.State.Game)
+        {
+            return;
+        }
+
         useRightArm = !context.canceled;
         CheckIfNoLimbIsSelected();
     }
@@ -82,7 +120,7 @@ public class PlayerInputAdapter : MonoBehaviour
 
     public void InvertLeftLimb(InputAction.CallbackContext context)
     {
-        if (!context.performed)
+        if (!context.performed || gameManager.CurrentState != GameManager.State.Game)
         {
             return;
         }
@@ -99,7 +137,7 @@ public class PlayerInputAdapter : MonoBehaviour
 
     public void InvertRightLimb(InputAction.CallbackContext context)
     {
-        if (!context.performed)
+        if (!context.performed || gameManager.CurrentState != GameManager.State.Game)
         {
             return;
         }
@@ -116,7 +154,7 @@ public class PlayerInputAdapter : MonoBehaviour
 
     public void MoveBody(InputAction.CallbackContext context)
     {
-        if (!context.performed)
+        if (!context.performed || gameManager.CurrentState != GameManager.State.Game)
         {
             return;
         }

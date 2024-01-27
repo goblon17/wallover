@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class JoiningManager : Singleton<JoiningManager>
 {
@@ -9,6 +10,8 @@ public class JoiningManager : Singleton<JoiningManager>
     private GameManager gameManager;
     [SerializeField]
     private PlayerManager playerManager;
+    [SerializeField]
+    private PlayerInputManager playerInputManager;
 
     [SerializeField]
     private RectTransform playersJoiningPanel;
@@ -26,6 +29,7 @@ public class JoiningManager : Singleton<JoiningManager>
     {
         base.Awake();
         gameManager.GameStateChangedEvent += OnGameStateChanged;
+        playerInputManager.DisableJoining();
     }
 
     private void OnGameStateChanged(GameManager.State newState)
@@ -44,6 +48,7 @@ public class JoiningManager : Singleton<JoiningManager>
         started = true;
         counter = 0;
         playersJoiningPanel.gameObject.SetActive(true);
+        playerInputManager.EnableJoining();
     }
 
     private void EndPlayerJoining()
@@ -51,6 +56,7 @@ public class JoiningManager : Singleton<JoiningManager>
         Time.timeScale = 1;
         started = false;
         playersJoiningPanel.gameObject.SetActive(false);
+        playerInputManager.DisableJoining();
         gameManager.EndState(GameManager.State.Joining);
     }
 
@@ -64,7 +70,7 @@ public class JoiningManager : Singleton<JoiningManager>
         if (playerManager.PlayerCount > 0)
         {
             counter += Time.unscaledDeltaTime;
-            countdown.text = $"{timeToJoin - counter}";
+            countdown.text = $"{timeToJoin - counter:F2}";
         }
         else
         {
