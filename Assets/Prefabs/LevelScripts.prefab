@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5858225601158767514}
   - component: {fileID: 7508241447283816210}
+  - component: {fileID: 6103239972671830485}
+  - component: {fileID: 3688213378428409996}
+  - component: {fileID: 5596137589397831374}
   m_Layer: 0
   m_Name: LevelScripts
   m_TagString: Untagged
@@ -50,7 +53,19 @@ MonoBehaviour:
   m_JoinBehavior: 0
   m_PlayerJoinedEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3688213378428409996}
+        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
+        m_MethodName: OnPlayerJoined
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_PlayerLeftEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -76,3 +91,45 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &6103239972671830485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8940560441211067807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9a72abbf825f94a9deb97855863934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3688213378428409996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8940560441211067807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f050b929e5c17c34ba5d4374c029c3e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5596137589397831374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8940560441211067807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013a0cc040cd6e445a0c46c22ce554cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 6103239972671830485}
+  playerManager: {fileID: 3688213378428409996}
+  playersJoiningPanel: {fileID: 0}
+  playerCount: {fileID: 0}
+  countdown: {fileID: 0}
+  timeToJoin: 10
