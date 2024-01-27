@@ -11,22 +11,29 @@ public class PlayerManager : Singleton<PlayerManager>
     [SerializeField]
     private SerializedDictionary<PlayerColor, Material> playerMaterials;
 
+    [SerializeField]
+    private SerializedDictionary<PlayerColor, PlayerJumper> playerJumpers; 
+
     public int PlayerCount => players.Count;
 
-    private HashSet<PlayerColor> players;
+    private Dictionary<PlayerColor, PlayerBonesDataManager> players;
 
 
     protected override void Awake()
     {
         base.Awake();
-        players = new HashSet<PlayerColor>();
+        players = new Dictionary<PlayerColor, PlayerBonesDataManager>();
+        foreach (PlayerJumper jumper in playerJumpers.Values)
+        {
+            jumper.gameObject.SetActive(false);
+        }
     }
 
     private PlayerColor GetAvailableColor()
     {
         foreach (PlayerColor player in Enum.GetValues(typeof(PlayerColor)))
         {
-            if (!players.Contains(player))
+            if (!players.ContainsKey(player))
             {
                 return player;
             }
@@ -37,9 +44,21 @@ public class PlayerManager : Singleton<PlayerManager>
     public void OnPlayerJoined(PlayerInput playerInput)
     {
         PlayerColor playerColor = GetAvailableColor();
-        players.Add(playerColor);
+        players[playerColor] = playerInput.GetComponentInChildren<PlayerBonesDataManager>();
         playerInput.GetComponent<PlayerData>().OnSpawn(playerColor, playerMaterials[playerColor]);
     }
+
+    public void SpawnJumpers()
+    {
+		foreach (PlayerColor player in Enum.GetValues(typeof(PlayerColor)))
+        {
+			if (players.ContainsKey(player))
+            {
+				playerJumpers[player].gameObject.SetActive(true);
+                playerJumpers[player].Jump(players[player].GetBonesData());
+			}
+		}
+	}
 
     public void OnPlayerDeath()
     {

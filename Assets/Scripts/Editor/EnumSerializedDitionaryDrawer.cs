@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEditorInternal;
 
 [CustomPropertyDrawer(typeof(SerializedDictionary<PlayerManager.PlayerColor, Material>))]
+[CustomPropertyDrawer(typeof(SerializedDictionary<PlayerManager.PlayerColor, PlayerJumper>))]
 public class EnumSerializedDictionaryDrawer : PropertyDrawer
 {
     private Dictionary<string, ReorderableList> lists = new Dictionary<string, ReorderableList>();

@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEngine.Events;
 
 [CustomPropertyDrawer(typeof(SerializedPair<NullableObject<PlayerManager.PlayerColor>, Material>))]
+[CustomPropertyDrawer(typeof(SerializedPair<NullableObject<PlayerManager.PlayerColor>, PlayerJumper>))]
 public class SerializedPairDrawer : PropertyDrawer
 {
     private float gap = 2;

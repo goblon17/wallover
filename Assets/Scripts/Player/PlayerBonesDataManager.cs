@@ -10,7 +10,7 @@ public class PlayerBonesDataManager : MonoBehaviour
         PlayerBone[] bones = GetComponentsInChildren<PlayerBone>();
         foreach (PlayerBone bone in bones)
         {
-            data.BonesData.Add(bone.boneName, (bone.transform.localPosition, bone.transform.localRotation));
+            data.BonesData.Add(bone.boneName, bone.transform.rotation);
         }
         data.Root = (transform.position, transform.rotation);
         return data;
