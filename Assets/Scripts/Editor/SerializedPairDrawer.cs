@@ -7,6 +7,7 @@ using UnityEngine.Events;
 [CustomPropertyDrawer(typeof(SerializedPair<NullableObject<PlayerManager.PlayerColor>, Material>))]
 [CustomPropertyDrawer(typeof(SerializedPair<NullableObject<PlayerManager.PlayerColor>, PlayerJumper>))]
 [CustomPropertyDrawer(typeof(SerializedPair<NullableObject<PlayerManager.PlayerColor>, Vector3>))]
+[CustomPropertyDrawer(typeof(SerializedPair<NullableObject<string>, SoundCollection>))]
 public class SerializedPairDrawer : PropertyDrawer
 {
     private float gap = 2;

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.Events;
 
-
+[CustomPropertyDrawer(typeof(SerializedDictionary<string, SoundCollection>))]
 public class SerializedDictionaryDrawer : PropertyDrawer
 {
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
