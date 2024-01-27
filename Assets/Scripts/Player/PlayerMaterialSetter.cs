@@ -8,4 +8,5 @@ public class PlayerMaterialSetter : MonoBehaviour
 	protected Renderer renderer;
 
 	public Material PlayerMaterial { set => renderer.material = value; }
+	public PlayerManager.PlayerColor Color { get; set; }
 }

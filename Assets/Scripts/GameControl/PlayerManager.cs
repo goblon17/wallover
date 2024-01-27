@@ -53,10 +53,11 @@ public class PlayerManager : Singleton<PlayerManager>
         jumpers[playerColor] = playerInput.GetComponentInChildren<PlayerJumper>();
         jumpers[playerColor].transform.position = jumpersPositions[playerColor];
 		jumpers[playerColor].PlayerMaterial = playerMaterials[playerColor];
+        jumpers[playerColor].Color = playerColor;
 	}
 
-    public void OnPlayerDeath()
+    public void OnPlayerDeath(PlayerColor color)
     {
-
+        Debug.Log($"Player {color} died");
     }
 }
