@@ -12,6 +12,8 @@ public class JoiningManager : Singleton<JoiningManager>
     private PlayerManager playerManager;
     [SerializeField]
     private PlayerInputManager playerInputManager;
+    [SerializeField]
+    private SoundModule soundModule;
 
     [SerializeField]
     private RectTransform playersJoiningPanel;
@@ -24,6 +26,7 @@ public class JoiningManager : Singleton<JoiningManager>
 
     private bool started = false;
     private float counter = 0;
+    private bool firstPlayer = true;
 
     protected override void Awake()
     {
@@ -49,6 +52,7 @@ public class JoiningManager : Singleton<JoiningManager>
         counter = 0;
         playersJoiningPanel.gameObject.SetActive(true);
         playerInputManager.EnableJoining();
+        firstPlayer = true;
     }
 
     private void EndPlayerJoining()
@@ -71,6 +75,11 @@ public class JoiningManager : Singleton<JoiningManager>
         {
             counter += Time.unscaledDeltaTime;
             countdown.text = $"{timeToJoin - counter:F2}";
+            if (firstPlayer)
+            {
+                firstPlayer = false;
+                soundModule.PlaySound("Intro");
+            }
         }
         else
         {

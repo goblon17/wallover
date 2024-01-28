@@ -184,6 +184,7 @@ MonoBehaviour:
   gameManager: {fileID: 6103239972671830485}
   playerManager: {fileID: 3688213378428409996}
   playerInputManager: {fileID: 7508241447283816210}
+  soundModule: {fileID: 3502106571681711234}
   playersJoiningPanel: {fileID: 0}
   playerCount: {fileID: 0}
   countdown: {fileID: 0}
@@ -316,4 +317,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-    pairs: []
+    pairs:
+    - Key:
+        item: AllFail
+      Value: {fileID: 11400000, guid: 35a741cecfc9fdd4ab2322680ea8d97d, type: 2}
+    - Key:
+        item: AllSuccess
+      Value: {fileID: 11400000, guid: 1c016462ba87a59469b44bcaf1a1edbf, type: 2}
+    - Key:
+        item: BluFail
+      Value: {fileID: 11400000, guid: 441ef026af5b8c74f9058d43baa14004, type: 2}
+    - Key:
+        item: BluSuccess
+      Value: {fileID: 11400000, guid: de02193b28ebabd4799500cdc6faf0f5, type: 2}
+    - Key:
+        item: Bullech
+      Value: {fileID: 11400000, guid: cf933e1d668da0246a42da78dfbdeaa8, type: 2}
+    - Key:
+        item: Draakus
+      Value: {fileID: 11400000, guid: a05719950a57c5446b7289d88d676fd8, type: 2}
+    - Key:
+        item: Frosch
+      Value: {fileID: 11400000, guid: 7a3d1ed8507bf894093661bec7a33559, type: 2}
+    - Key:
+        item: GrnFail
+      Value: {fileID: 11400000, guid: c449d92b0b6b66c44a1b627f7960207b, type: 2}
+    - Key:
+        item: GrnSuccess
+      Value: {fileID: 11400000, guid: 0cc3558d2c0d12041875cd795de81a73, type: 2}
+    - Key:
+        item: Intro
+      Value: {fileID: 11400000, guid: ac76f53105e14a84682521e8330a8b33, type: 2}
+    - Key:
+        item: Jezyk
+      Value: {fileID: 11400000, guid: 8bdfbad5944f0e743837d6c16892b03c, type: 2}
+    - Key:
+        item: Koziolki
+      Value: {fileID: 11400000, guid: b511f4136b78e644988c34d418e35fb1, type: 2}
+    - Key:
+        item: Mech
+      Value: {fileID: 11400000, guid: 1cdabab9e8f7acb43a2251d0e939c63f, type: 2}
+    - Key:
+        item: RedFail
+      Value: {fileID: 11400000, guid: 960c0fdb1685cb446b41742cc1a72075, type: 2}
+    - Key:
+        item: RedSuccess
+      Value: {fileID: 11400000, guid: eb9b4325d901a874aa09e9a9ddcbde5f, type: 2}
+    - Key:
+        item: YlwFail
+      Value: {fileID: 11400000, guid: ffd89edf841bcd143a53dff3fbb3848e, type: 2}
+    - Key:
+        item: YlwSuccess
+      Value: {fileID: 11400000, guid: 85e241a076a47d0468d753326f98aed3, type: 2}
