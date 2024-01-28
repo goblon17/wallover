@@ -12,6 +12,8 @@ public class LevelMusic : MonoBehaviour
     private void Start()
     {
         WallManager.Instance.WallStartedEvent += OnWallStarted;
+        AdPlayer.Instance.AdStartedEvent += () => audioSource.Stop();
+        AdPlayer.Instance.AdEndedEvent += () => audioSource.Play();
     }
 
     private void OnWallStarted()

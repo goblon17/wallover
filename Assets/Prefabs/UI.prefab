@@ -167,6 +167,7 @@ MonoBehaviour:
   - {fileID: 32900000, guid: 514fe3f3470da5847ac17c7743096c0c, type: 3}
   - {fileID: 32900000, guid: d6aa1447cc704e344bc8a3d243e6a911, type: 3}
   - {fileID: 32900000, guid: 85806f83c3553b84d9032b0ac935c030, type: 3}
+  - {fileID: 32900000, guid: 8afb856476bf0774bb7eeea9b9f8b485, type: 3}
   player: {fileID: 7149512666201624634}
   videoScreen: {fileID: 3441267458491966369}
 --- !u!1 &1616336675890968780

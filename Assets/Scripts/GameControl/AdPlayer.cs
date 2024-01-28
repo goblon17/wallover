@@ -12,6 +12,9 @@ public class AdPlayer : Singleton<AdPlayer>
     [SerializeField]
     private GameObject videoScreen;
 
+    public event System.Action AdStartedEvent;
+    public event System.Action AdEndedEvent;
+
     public void PlayAd()
     {
         Time.timeScale = 0;
@@ -20,11 +23,13 @@ public class AdPlayer : Singleton<AdPlayer>
         player.clip = ad;
         player.loopPointReached += OnAdEnd;
         player.Play();
+        AdStartedEvent?.Invoke();
     }
 
     private void OnAdEnd(VideoPlayer source)
     {
         Time.timeScale = 1;
         videoScreen.SetActive(false);
+        AdEndedEvent?.Invoke();
     }
 }
