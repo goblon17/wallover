@@ -60,7 +60,7 @@ public class SpeakerManager : Singleton<SpeakerManager>
         {
             if (playerManager.PlayersKilledThisRound.Count == 1)
             {
-                string key = playerManager.PlayersLeft.Single() switch
+                string key = playerManager.PlayersKilledThisRound.Single() switch
                 {
                     PlayerManager.PlayerColor.Red => "RedFail",
                     PlayerManager.PlayerColor.Blue => "BluFail",
