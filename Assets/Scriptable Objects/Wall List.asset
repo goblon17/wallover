@@ -36,7 +36,7 @@ MonoBehaviour:
     meta: 0
   - mesh: {fileID: -6382672474699200910, guid: 7bc85b775b0c62946bf0a633492ad59c, type: 3}
     meta: 1
-  - mesh: {fileID: -6382672474699200910, guid: f003e35c8538cd54993aa1f861a2ce06, type: 3}
+  - mesh: {fileID: -6382672474699200910, guid: ecf5d3b3e278541468943c4c9d87cc79, type: 3}
     meta: 0
   wallMaterials:
   - material: {fileID: 2100000, guid: 159be222a59ba854e8e455bd901b5d56, type: 2}
