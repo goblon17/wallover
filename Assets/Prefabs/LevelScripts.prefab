@@ -205,9 +205,9 @@ MonoBehaviour:
   walls: {fileID: 11400000, guid: 8397dcd234af7d44287af4bf5a4d3569, type: 2}
   spawnTransform: {fileID: 0}
   targetTransform: {fileID: 0}
-  moveDuration: 10
+  moveDuration: 15
   waitDuration: 5
-  ragdollEnablePoint: 5
+  ragdollEnablePoint: 7.5
 --- !u!82 &6045988985092608534
 AudioSource:
   m_ObjectHideFlags: 0
