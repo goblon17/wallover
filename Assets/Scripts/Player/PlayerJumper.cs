@@ -30,16 +30,20 @@ public class PlayerJumper : PlayerMaterialSetter
 	{
 		bones = GetComponentsInChildren<PlayerBone>();
 		startPositions = bonesDataManager.GetBonesData();
-		ragdoll = Instantiate(ragdollPrefab, transform.parent).GetComponentInChildren<PlayerBonesDataManager>();
 		data = GetComponentInParent<PlayerData>();
-		data.Ragdoll = ragdoll.GetComponentInChildren<PlayerRagdoll>();
-		data.Ragdoll.Color = Color;
-		data.Ragdoll.PlayerParent = transform.parent.gameObject;
-		ragdoll.gameObject.SetActive(false);
 		WallManager.Instance.EnableRagdollEvent += OnRagdollEnable;
 		WallManager.Instance.WallEndedEvent += OnWallEnded;
 		WallManager.Instance.WallStartedEvent += OnWallStarted;
 		WallManager.Instance.WallSpawned += OnWallSpawned;
+	}
+
+	private void SpawnRagdoll()
+	{
+		ragdoll = Instantiate(ragdollPrefab, transform.parent).GetComponentInChildren<PlayerBonesDataManager>();
+		data.Ragdoll = ragdoll.GetComponentInChildren<PlayerRagdoll>();
+		data.Ragdoll.Color = Color;
+		data.Ragdoll.PlayerParent = transform.parent.gameObject;
+		ragdoll.gameObject.SetActive(false);
 	}
 
 	private void OnWallSpawned()
@@ -110,13 +114,10 @@ public class PlayerJumper : PlayerMaterialSetter
 		{
 			return;
 		}
+		SpawnRagdoll();
 		isJumping = false;
 		ragdoll.gameObject.SetActive(true);
 		Rigidbody[] ragdollRb = ragdoll.GetComponentsInChildren<Rigidbody>();
-		foreach (Rigidbody rb in ragdollRb)
-		{
-			rb.isKinematic = true;
-		}
 		ragdoll.Apply(bonesDataManager.GetBonesData());
 		foreach (Rigidbody rb in ragdollRb)
 		{
@@ -149,7 +150,7 @@ public class PlayerJumper : PlayerMaterialSetter
 
 	private void HideRagdoll()
 	{
-		ragdoll.gameObject.SetActive(false);
+		Destroy(ragdoll.transform.parent.gameObject);
 		ragdollShown = false;
 	}
 }
