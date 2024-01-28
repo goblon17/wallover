@@ -1761,11 +1761,11 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3928655669792047153, guid: 7431ab8ee4c25eb43a26caa4fb6672f4, type: 3}
-      propertyPath: m_AnchoredPosition.y
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4834835346915719203, guid: 7431ab8ee4c25eb43a26caa4fb6672f4, type: 3}
-      propertyPath: m_AnchoredPosition.y
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6030637152315589570, guid: 7431ab8ee4c25eb43a26caa4fb6672f4, type: 3}
