@@ -12,6 +12,9 @@ public class PlayerJumper : PlayerMaterialSetter
 	[SerializeField]
 	private PlayerBonesDataManager bonesDataManager;
 
+	[SerializeField]
+	private float additionalForwardRagdollFroce;
+
 	private PlayerBonesData targetPositions;
 	private PlayerBonesData startPositions;
 	private PlayerBonesDataManager ragdoll;
@@ -36,6 +39,23 @@ public class PlayerJumper : PlayerMaterialSetter
 		WallManager.Instance.EnableRagdollEvent += OnRagdollEnable;
 		WallManager.Instance.WallEndedEvent += OnWallEnded;
 		WallManager.Instance.WallStartedEvent += OnWallStarted;
+		WallManager.Instance.WallSpawned += OnWallSpawned;
+	}
+
+	private void OnWallSpawned()
+	{
+		if (data.Setter != null)
+		{
+			data.Setter.gameObject.SetActive(true);
+		}
+	}
+
+	private void OnDestroy()
+	{
+		WallManager.Instance.EnableRagdollEvent -= OnRagdollEnable;
+		WallManager.Instance.WallEndedEvent -= OnWallEnded;
+		WallManager.Instance.WallStartedEvent -= OnWallStarted;
+		WallManager.Instance.WallSpawned -= OnWallSpawned;
 	}
 
 	public void Jump(PlayerBonesData targetPosition)
@@ -92,11 +112,16 @@ public class PlayerJumper : PlayerMaterialSetter
 		}
 		isJumping = false;
 		ragdoll.gameObject.SetActive(true);
-		ragdoll.Apply(bonesDataManager.GetBonesData());
 		Rigidbody[] ragdollRb = ragdoll.GetComponentsInChildren<Rigidbody>();
 		foreach (Rigidbody rb in ragdollRb)
 		{
+			rb.isKinematic = true;
+		}
+		ragdoll.Apply(bonesDataManager.GetBonesData());
+		foreach (Rigidbody rb in ragdollRb)
+		{
 			rb.isKinematic = false;
+			rb.AddForce(Vector3.forward * additionalForwardRagdollFroce);
 		}
 		data.Ragdoll.PlayerMaterial = renderer.material;
 		ragdollShown = true;
@@ -120,10 +145,6 @@ public class PlayerJumper : PlayerMaterialSetter
 	{
 		canJump = true;
 		renderer.enabled = true;
-		if (data.Setter != null)
-		{
-			data.Setter.gameObject.SetActive(true);
-		}
 	}
 
 	private void HideRagdoll()

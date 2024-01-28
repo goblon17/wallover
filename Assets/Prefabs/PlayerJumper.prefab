@@ -48,6 +48,7 @@ MonoBehaviour:
   renderer: {fileID: 1732674811878372892}
   ragdollPrefab: {fileID: 9176485096983755683, guid: 665fc30a22bb3e949b9bec8ea0e296d3, type: 3}
   bonesDataManager: {fileID: 7386787971813131158}
+  additionalForwardRagdollFroce: 100
 --- !u!1001 &446588701988814503
 PrefabInstance:
   m_ObjectHideFlags: 0
