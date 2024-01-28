@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ae48d873a82ecf4392ca41c4c1ba158, type: 3}
+  m_Name: BluSucc
+  m_EditorClassIdentifier: 
+  volume:
+    Min: 1
+    Max: 1
+  clips:
+  - {fileID: 8300000, guid: c08173c696725184da9ced276738454d, type: 3}
+  - {fileID: 8300000, guid: fc5c6656fbaf94947a113b50a7a81211, type: 3}
+  - {fileID: 8300000, guid: a440bb8431f154d42aad0e5a1aaa8258, type: 3}
+  - {fileID: 8300000, guid: 5e443d08d5a13514ba32844a8a1dea5a, type: 3}

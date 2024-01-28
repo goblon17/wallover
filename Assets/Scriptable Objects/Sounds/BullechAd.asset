@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ae48d873a82ecf4392ca41c4c1ba158, type: 3}
-  m_Name: Normal Wall
+  m_Name: BullechAd
   m_EditorClassIdentifier: 
   volume:
     Min: 1
     Max: 1
-  clips: []
+  clips:
+  - {fileID: 8300000, guid: 36371194699ab054c8b83a72b3c5289a, type: 3}

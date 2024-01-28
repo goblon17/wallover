@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ae48d873a82ecf4392ca41c4c1ba158, type: 3}
+  m_Name: YlwSucc
+  m_EditorClassIdentifier: 
+  volume:
+    Min: 1
+    Max: 1
+  clips:
+  - {fileID: 8300000, guid: 9150b5e5b312d2a429ffdf4973af7f26, type: 3}
+  - {fileID: 8300000, guid: 33b84ca870182e546a6b6971a877cd88, type: 3}
+  - {fileID: 8300000, guid: 7a0c7f03c449b554e8a89eddce1334c1, type: 3}
+  - {fileID: 8300000, guid: 9fe342ed9b01f1c4198a03753c89f55a, type: 3}
+  - {fileID: 8300000, guid: cddf7763e2b98fa4e911091459729e2d, type: 3}

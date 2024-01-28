@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ae48d873a82ecf4392ca41c4c1ba158, type: 3}
+  m_Name: GrnSucc
+  m_EditorClassIdentifier: 
+  volume:
+    Min: 1
+    Max: 1
+  clips:
+  - {fileID: 8300000, guid: 185f0256499531a408df314d4ab0f6f0, type: 3}
+  - {fileID: 8300000, guid: 0b59340ea52497d4faf9395f1a818242, type: 3}
+  - {fileID: 8300000, guid: 0c7b0af6ef2fb59409e35acafe2a7299, type: 3}
+  - {fileID: 8300000, guid: 4d2db682c43c86641b2252d59684fd97, type: 3}

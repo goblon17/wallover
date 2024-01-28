@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -369,22 +369,6 @@ PrefabInstance:
     - target: {fileID: 5858225601158767514, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7508241447283816210, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7508241447283816210, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[1].m_Id
-      value: 4d1a6779-d2ca-4ce7-9d57-a7f3445bd762
-      objectReference: {fileID: 0}
-    - target: {fileID: 7508241447283816210, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[1].m_Path
-      value: <Keyboard>/space
-      objectReference: {fileID: 0}
-    - target: {fileID: 7508241447283816210, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[1].m_Action
-      value: Join
       objectReference: {fileID: 0}
     - target: {fileID: 8940560441211067807, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
       propertyPath: m_Name
