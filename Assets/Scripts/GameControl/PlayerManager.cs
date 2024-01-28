@@ -26,14 +26,12 @@ public class PlayerManager : Singleton<PlayerManager>
 
     public int PlayerCount => players.Count;
 
-    private Dictionary<PlayerColor, PlayerJumper> jumpers;
-    private Dictionary<PlayerColor, PlayerBonesDataManager> players;
+    private Dictionary<PlayerColor, PlayerData> players;
 
     protected override void Awake()
     {
         base.Awake();
-        players = new Dictionary<PlayerColor, PlayerBonesDataManager>();
-        jumpers = new Dictionary<PlayerColor, PlayerJumper>();
+        players = new Dictionary<PlayerColor, PlayerData>();
 		WallManager.Instance.WallStartedEvent += OnWallStarted;
     }
 
@@ -57,13 +55,15 @@ public class PlayerManager : Singleton<PlayerManager>
     public void OnPlayerJoined(PlayerInput playerInput)
 	{
 		PlayerColor playerColor = GetAvailableColor();
-		players[playerColor] = playerInput.GetComponentInChildren<PlayerBonesDataManager>();
-		playerInput.GetComponent<PlayerData>().OnSpawn(playerColor, playerMaterials[playerColor]);
-        playerInput.transform.position = playersSpawnPositions[playerColor];
-        jumpers[playerColor] = playerInput.GetComponentInChildren<PlayerJumper>();
-        jumpers[playerColor].transform.position = jumpersPositions[playerColor];
-		jumpers[playerColor].PlayerMaterial = playerMaterials[playerColor];
-        jumpers[playerColor].Color = playerColor;
+        PlayerData data = playerInput.GetComponent<PlayerData>();
+		players[playerColor] = data;
+		data.OnSpawn(playerColor, playerMaterials[playerColor]);
+        data.Setter = playerInput.GetComponentInChildren<PlayerBodyMover>().GetComponent<PlayerBonesDataManager>();
+        data.Jumper = playerInput.GetComponentInChildren<PlayerJumper>();
+		playerInput.transform.position = playersSpawnPositions[playerColor];
+        data.Jumper.transform.position = jumpersPositions[playerColor];
+		data.Jumper.PlayerMaterial = playerMaterials[playerColor];
+		data.Jumper.Color = playerColor;
         PlayersLeft.Add(playerColor);
 	}
 
@@ -72,5 +72,10 @@ public class PlayerManager : Singleton<PlayerManager>
         Debug.Log($"Player {color} died");
         PlayersLeft.Remove(color);
         PlayersKilledThisRound.Add(color);
+    }
+
+    private void MovePlayersToStart()
+    {
+
     }
 }

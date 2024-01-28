@@ -20,17 +20,21 @@ public class PlayerJumper : PlayerMaterialSetter
 	private PlayerBone[] bones;
 	private float currentJumpTime;
 	private float jumpDuration = 1;
+	private bool canJump = false;
 
 	private void Start()
 	{
 		bones = GetComponentsInChildren<PlayerBone>();
 		startPositions = bonesDataManager.GetBonesData();
 		ragdoll = Instantiate(ragdollPrefab, transform.parent).GetComponentInChildren<PlayerBonesDataManager>();
-		PlayerRagdoll ragdollObject = ragdoll.GetComponentInChildren<PlayerRagdoll>();
-		ragdollObject.Color = Color;
-		ragdollObject.PlayerParent = transform.parent.gameObject;
+		PlayerData data = GetComponentInParent<PlayerData>();
+		data.Ragdoll = ragdoll.GetComponentInChildren<PlayerRagdoll>();
+		data.Ragdoll.Color = Color;
+		data.Ragdoll.PlayerParent = transform.parent.gameObject;
 		ragdoll.gameObject.SetActive(false);
 		WallManager.Instance.EnableRagdollEvent += ShowRagdoll;
+		WallManager.Instance.WallEndedEvent += OnWallEnded;
+		WallManager.Instance.WallStartedEvent += OnWallStarted;
 	}
 
 	public void Jump(PlayerBonesData targetPosition)
@@ -84,5 +88,29 @@ public class PlayerJumper : PlayerMaterialSetter
 		ragdoll.GetComponent<PlayerMaterialSetter>().PlayerMaterial = renderer.material;
 		ragdollShown = true;
 		renderer.enabled = false;
+	}
+
+	private void OnWallEnded()
+	{
+		HideRagdoll();
+		renderer.enabled = true;
+		foreach (PlayerBone bone in bones)
+		{
+			bone.transform.rotation = startPositions.BonesData[bone.boneName];
+		}
+		transform.position = startPositions.Root.Item1;
+		isJumping = false;
+		canJump = false;
+	}
+
+	private void OnWallStarted()
+	{
+		canJump = true;
+	}
+
+	private void HideRagdoll()
+	{
+		ragdoll.gameObject.SetActive(false);
+		ragdollShown = false;
 	}
 }
