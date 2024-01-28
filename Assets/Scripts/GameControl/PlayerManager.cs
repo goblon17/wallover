@@ -58,7 +58,7 @@ public class PlayerManager : Singleton<PlayerManager>
         PlayerData data = playerInput.GetComponent<PlayerData>();
 		players[playerColor] = data;
 		data.OnSpawn(playerColor, playerMaterials[playerColor]);
-        data.Setter = playerInput.GetComponentInChildren<PlayerBodyMover>().GetComponent<PlayerBonesDataManager>();
+        data.Setter = playerInput.GetComponentInChildren<PlayerBodyMover>().GetComponentInChildren<PlayerBonesDataManager>();
         data.Jumper = playerInput.GetComponentInChildren<PlayerJumper>();
 		playerInput.transform.position = playersSpawnPositions[playerColor];
         data.Jumper.transform.position = jumpersPositions[playerColor];
@@ -72,10 +72,5 @@ public class PlayerManager : Singleton<PlayerManager>
         Debug.Log($"Player {color} died");
         PlayersLeft.Remove(color);
         PlayersKilledThisRound.Add(color);
-    }
-
-    private void MovePlayersToStart()
-    {
-
     }
 }

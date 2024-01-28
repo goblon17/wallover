@@ -173,6 +173,5 @@ public class PlayerInputAdapter : MonoBehaviour
 		}
 
         jumper.Jump(setterBonesManager.GetBonesData());
-        mover.gameObject.SetActive(false);
 	}
 }

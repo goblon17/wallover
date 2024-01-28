@@ -12,14 +12,15 @@ public class PlayerJumper : PlayerMaterialSetter
 	[SerializeField]
 	private PlayerBonesDataManager bonesDataManager;
 
-	private bool isJumping;
-	private bool ragdollShown = false;
 	private PlayerBonesData targetPositions;
 	private PlayerBonesData startPositions;
 	private PlayerBonesDataManager ragdoll;
 	private PlayerBone[] bones;
+	PlayerData data;
 	private float currentJumpTime;
 	private float jumpDuration = 1;
+	private bool isJumping;
+	private bool ragdollShown = false;
 	private bool canJump = false;
 
 	private void Start()
@@ -27,22 +28,34 @@ public class PlayerJumper : PlayerMaterialSetter
 		bones = GetComponentsInChildren<PlayerBone>();
 		startPositions = bonesDataManager.GetBonesData();
 		ragdoll = Instantiate(ragdollPrefab, transform.parent).GetComponentInChildren<PlayerBonesDataManager>();
-		PlayerData data = GetComponentInParent<PlayerData>();
+		data = GetComponentInParent<PlayerData>();
 		data.Ragdoll = ragdoll.GetComponentInChildren<PlayerRagdoll>();
 		data.Ragdoll.Color = Color;
 		data.Ragdoll.PlayerParent = transform.parent.gameObject;
 		ragdoll.gameObject.SetActive(false);
-		WallManager.Instance.EnableRagdollEvent += ShowRagdoll;
+		WallManager.Instance.EnableRagdollEvent += OnRagdollEnable;
 		WallManager.Instance.WallEndedEvent += OnWallEnded;
 		WallManager.Instance.WallStartedEvent += OnWallStarted;
 	}
 
 	public void Jump(PlayerBonesData targetPosition)
 	{
-		isJumping = true;
-		targetPositions = targetPosition;
-		currentJumpTime = 0;
+		if (canJump)
+		{
+			isJumping = true;
+			targetPositions = targetPosition;
+			currentJumpTime = 0;
+			canJump = false;
+			data.Setter.gameObject.SetActive(false);
+		}
 	}
+
+	private void OnRagdollEnable()
+	{
+		data.Setter.gameObject.SetActive(false);
+		ShowRagdoll();
+	}
+
 
 	private void Update()
 	{
@@ -73,7 +86,7 @@ public class PlayerJumper : PlayerMaterialSetter
 
 	private void ShowRagdoll()
 	{
-		if(ragdollShown)
+		if (ragdollShown)
 		{
 			return;
 		}
@@ -106,6 +119,11 @@ public class PlayerJumper : PlayerMaterialSetter
 	private void OnWallStarted()
 	{
 		canJump = true;
+		renderer.enabled = true;
+		if (data.Setter != null)
+		{
+			data.Setter.gameObject.SetActive(true);
+		}
 	}
 
 	private void HideRagdoll()
