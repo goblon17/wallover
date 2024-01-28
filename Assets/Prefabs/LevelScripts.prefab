@@ -369,6 +369,24 @@ MonoBehaviour:
     - Key:
         item: YlwSuccess
       Value: {fileID: 11400000, guid: 85e241a076a47d0468d753326f98aed3, type: 2}
+    - Key:
+        item: Tricross
+      Value: {fileID: 11400000, guid: 95545f2d1e9c6be419332867dc0a1991, type: 2}
+    - Key:
+        item: WallNormal
+      Value: {fileID: 11400000, guid: 33380cadb5ce38344b5dd90a5e20f303, type: 2}
+    - Key:
+        item: WallNormalR
+      Value: {fileID: 11400000, guid: daca4e94656966f41847235be6b43599, type: 2}
+    - Key:
+        item: WallNormalG
+      Value: {fileID: 11400000, guid: 25ec887b15db5c64fb6531a6bb7d053e, type: 2}
+    - Key:
+        item: WallNormalB
+      Value: {fileID: 11400000, guid: 7469a4e4b31a85f408314e2ec4077b6c, type: 2}
+    - Key:
+        item: WallNormalY
+      Value: {fileID: 11400000, guid: c9593065d744c2340808231b11ef5da2, type: 2}
 --- !u!114 &1137072796334036420
 MonoBehaviour:
   m_ObjectHideFlags: 0

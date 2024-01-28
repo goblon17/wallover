@@ -151,6 +151,20 @@ public class SpeakerManager : Singleton<SpeakerManager>
         {
             return;
         }
+        if (Random.value <= 0.2)
+        {
+            PlayerManager.PlayerColor color = playerManager.PlayersLeft.GetRandomElement();
+            string key = color switch
+            {
+                PlayerManager.PlayerColor.Red => "WallNormalR",
+                PlayerManager.PlayerColor.Blue => "WallNormalB",
+                PlayerManager.PlayerColor.Green => "WallNormalG",
+                _ => "WallNormalY",
+            };
+            soundModule.PlaySound(key);
+            return;
+        }
+
         soundModule.PlaySound("WallNormal");
     }
 
