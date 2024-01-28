@@ -144,6 +144,8 @@ MonoBehaviour:
   audioSource: {fileID: 4072234292086360772}
   musics:
   - {fileID: 8300000, guid: ae15019a1910a5946b0c985a9a8f8f3f, type: 3}
+  - {fileID: 8300000, guid: b82865f5998fc354d9ca1d449bed2983, type: 3}
+  - {fileID: 8300000, guid: 21458b2ea97528e458916c23343a440a, type: 3}
 --- !u!1 &8940560441211067807
 GameObject:
   m_ObjectHideFlags: 0
