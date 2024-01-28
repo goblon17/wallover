@@ -9,9 +9,9 @@ public class WallList : ScriptableObject
     public enum MaterialMeta { Normal, Frosch, MechPosnan, Bullech, Jez, Koziolki, Draakus };
 
     [System.Serializable]
-    private class WallMesh
+    private class WallPrefab
     {
-        public Mesh mesh;
+        public GameObject prefab;
         public MeshMeta meta;
     }
 
@@ -23,20 +23,16 @@ public class WallList : ScriptableObject
     }
 
     [SerializeField]
-    private GameObject wallPrefab;
-    [SerializeField]
-    private List<WallMesh> wallMeshes;
+    private List<WallPrefab> wallMeshes;
     [SerializeField]
     private List<WallMaterial> wallMaterials;
 
     public (GameObject wall, MeshMeta meshMeta, MaterialMeta materialMeta) GetRandomWall()
     {
-        GameObject wall = Instantiate(wallPrefab);
-        WallMesh mesh = wallMeshes.GetRandomElement();
+        WallPrefab prefabData = wallMeshes.GetRandomElement();
+        GameObject wall = Instantiate(prefabData.prefab);
         WallMaterial material = wallMaterials.GetRandomElement();
-        wall.GetComponent<MeshFilter>().sharedMesh = mesh.mesh;
-        wall.GetComponent<MeshCollider>().sharedMesh = mesh.mesh;
         wall.GetComponent<MeshRenderer>().sharedMaterial = material.material;
-        return (wall, mesh.meta, material.meta);
+        return (wall, prefabData.meta, material.meta);
     }
 }

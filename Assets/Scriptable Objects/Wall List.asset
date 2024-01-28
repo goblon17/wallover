@@ -12,31 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bc8bc2ea3ba8764db654f1e49797c54, type: 3}
   m_Name: Wall List
   m_EditorClassIdentifier: 
-  wallPrefab: {fileID: 5456576847820977768, guid: fc90b49c3e2afe34ba2445d65f617af2, type: 3}
   wallMeshes:
-  - mesh: {fileID: -6382672474699200910, guid: 129b4da03f98b1a4e8290694f729e1d7, type: 3}
+  - prefab: {fileID: 5456576847820977768, guid: 715f41b1f3d34df4b8147358d7998a15, type: 3}
     meta: 0
-  - mesh: {fileID: -6382672474699200910, guid: 2519b8dce987ea249a3d09d8a2c01756, type: 3}
+  - prefab: {fileID: 5456576847820977768, guid: 69f512bee6f87bf49b3499722038547a, type: 3}
     meta: 0
-  - mesh: {fileID: -6382672474699200910, guid: a625cf5db4af208429746101f4899247, type: 3}
+  - prefab: {fileID: 5456576847820977768, guid: 0af576d6585c6f34298700d023b3924b, type: 3}
     meta: 0
-  - mesh: {fileID: -6382672474699200910, guid: 67547d9e32fcbb641836a26be58ac1ab, type: 3}
+  - prefab: {fileID: 5456576847820977768, guid: 53d883a579657544eaa464aac252122c, type: 3}
     meta: 0
-  - mesh: {fileID: -6382672474699200910, guid: f323fb199c7ddc644a9f0f6256b861f3, type: 3}
+  - prefab: {fileID: 5456576847820977768, guid: c0bc3924b7369434996bfa121ef695b2, type: 3}
     meta: 0
-  - mesh: {fileID: -6382672474699200910, guid: 9726055dd994aac42a5bf62fb788e8b3, type: 3}
+  - prefab: {fileID: 5456576847820977768, guid: 308bd9360348cf34db21a6b3482369dc, type: 3}
     meta: 0
-  - mesh: {fileID: -6382672474699200910, guid: 3ffca4fd0fe3c0840801737eb063c2af, type: 3}
+  - prefab: {fileID: 5456576847820977768, guid: c42d0c19fc1b16c4dbb0f4c8bd10837d, type: 3}
     meta: 0
-  - mesh: {fileID: -6382672474699200910, guid: 27bbc198ef903694c98b3281ed45a571, type: 3}
+  - prefab: {fileID: 5456576847820977768, guid: 430434a57e989b94d98e80e2a30ab7d9, type: 3}
     meta: 0
-  - mesh: {fileID: -6382672474699200910, guid: c7194c7fdbcde834d9dfd14d8a8d5b7e, type: 3}
+  - prefab: {fileID: 5456576847820977768, guid: c15a5f1079cd92e4da4f72928be939de, type: 3}
     meta: 0
-  - mesh: {fileID: -6382672474699200910, guid: 05a5fe2376e10e44ab276b63ea20e3d2, type: 3}
+  - prefab: {fileID: 5456576847820977768, guid: a04ccb0d443bb13469bfb60955dc4d73, type: 3}
     meta: 0
-  - mesh: {fileID: -6382672474699200910, guid: 7bc85b775b0c62946bf0a633492ad59c, type: 3}
+  - prefab: {fileID: 5456576847820977768, guid: b0766f073d9c41f4d80dc89638628a51, type: 3}
     meta: 1
-  - mesh: {fileID: -6382672474699200910, guid: ecf5d3b3e278541468943c4c9d87cc79, type: 3}
+  - prefab: {fileID: 5456576847820977768, guid: fc90b49c3e2afe34ba2445d65f617af2, type: 3}
     meta: 0
   wallMaterials:
   - material: {fileID: 2100000, guid: 159be222a59ba854e8e455bd901b5d56, type: 2}
