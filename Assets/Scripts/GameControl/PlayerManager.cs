@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : Singleton<PlayerManager>
 {
@@ -72,5 +73,9 @@ public class PlayerManager : Singleton<PlayerManager>
         Debug.Log($"Player {color} died");
         PlayersLeft.Remove(color);
         PlayersKilledThisRound.Add(color);
+        if(PlayersLeft.Count == 0)
+        {
+            SceneManager.LoadScene("Main Menu");
+        }
     }
 }
