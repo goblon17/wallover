@@ -16,7 +16,7 @@ public class PlayerJumper : PlayerMaterialSetter
 	private PlayerBonesData startPositions;
 	private PlayerBonesDataManager ragdoll;
 	private PlayerBone[] bones;
-	PlayerData data;
+	private PlayerData data;
 	private float currentJumpTime;
 	private float jumpDuration = 1;
 	private bool isJumping;
@@ -98,7 +98,7 @@ public class PlayerJumper : PlayerMaterialSetter
 		{
 			rb.isKinematic = false;
 		}
-		ragdoll.GetComponent<PlayerMaterialSetter>().PlayerMaterial = renderer.material;
+		data.Ragdoll.PlayerMaterial = renderer.material;
 		ragdollShown = true;
 		renderer.enabled = false;
 	}
