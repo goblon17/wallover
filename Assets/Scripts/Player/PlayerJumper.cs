@@ -25,8 +25,10 @@ public class PlayerJumper : PlayerMaterialSetter
 	{
 		bones = GetComponentsInChildren<PlayerBone>();
 		startPositions = bonesDataManager.GetBonesData();
-		ragdoll = Instantiate(ragdollPrefab).GetComponentInChildren<PlayerBonesDataManager>();
-		ragdoll.GetComponentInChildren<PlayerRagdoll>().Color = Color;
+		ragdoll = Instantiate(ragdollPrefab, transform.parent).GetComponentInChildren<PlayerBonesDataManager>();
+		PlayerRagdoll ragdollObject = ragdoll.GetComponentInChildren<PlayerRagdoll>();
+		ragdollObject.Color = Color;
+		ragdollObject.PlayerParent = transform.parent.gameObject;
 		ragdoll.gameObject.SetActive(false);
 		WallManager.Instance.EnableRagdollEvent += ShowRagdoll;
 	}
