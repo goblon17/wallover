@@ -288,6 +288,20 @@ MonoBehaviour:
     - Key:
         item: 3
       Value: {fileID: 2100000, guid: 24a3bf94c4901ac489eba2fcb96cbbff, type: 2}
+  playerSetterMaterials:
+    pairs:
+    - Key:
+        item: 0
+      Value: {fileID: 2100000, guid: f01887c7ee4c7f240a3efe2ab2c1ae6e, type: 2}
+    - Key:
+        item: 1
+      Value: {fileID: 2100000, guid: c941613af4b5365469b398b95a3a4a1c, type: 2}
+    - Key:
+        item: 2
+      Value: {fileID: 2100000, guid: 6408b9dcfdc6b6a45b38b9b72e66f1dd, type: 2}
+    - Key:
+        item: 3
+      Value: {fileID: 2100000, guid: d829a15cdc805e149bc8088afbce6ada, type: 2}
   jumpersPositions:
     pairs:
     - Key:

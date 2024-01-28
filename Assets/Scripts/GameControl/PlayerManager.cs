@@ -14,6 +14,9 @@ public class PlayerManager : Singleton<PlayerManager>
     private SerializedDictionary<PlayerColor, Material> playerMaterials;
 
     [SerializeField]
+    private SerializedDictionary<PlayerColor, Material> playerSetterMaterials;
+
+    [SerializeField]
     private SerializedDictionary<PlayerColor, Vector3> jumpersPositions;
 
 	[SerializeField]
@@ -58,7 +61,7 @@ public class PlayerManager : Singleton<PlayerManager>
 		PlayerColor playerColor = GetAvailableColor();
         PlayerData data = playerInput.GetComponent<PlayerData>();
 		players[playerColor] = data;
-		data.OnSpawn(playerColor, playerMaterials[playerColor]);
+		data.OnSpawn(playerColor, playerSetterMaterials[playerColor]);
         data.Setter = playerInput.GetComponentInChildren<PlayerBodyMover>().GetComponentInChildren<PlayerBonesDataManager>();
         data.Jumper = playerInput.GetComponentInChildren<PlayerJumper>();
 		playerInput.transform.position = playersSpawnPositions[playerColor];
