@@ -563,4 +563,4 @@ MonoBehaviour:
   soundModule: {fileID: 3502106571681711234}
   wallManager: {fileID: 1040684833448616141}
   playerManager: {fileID: 3688213378428409996}
-  movieAdProbability: 0.1
+  movieAdProbability: 0.65

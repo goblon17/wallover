@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -437,10 +437,6 @@ PrefabInstance:
     - target: {fileID: 1040684833448616141, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
       propertyPath: ragdollEnablePoint
       value: 7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1137072796334036420, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
-      propertyPath: movieAdProbability
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5596137589397831374, guid: 613da84d7ea104749b51532e6e20f718, type: 3}
       propertyPath: countdown
