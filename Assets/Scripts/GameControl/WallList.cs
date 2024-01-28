@@ -6,7 +6,7 @@ using UnityEngine;
 public class WallList : ScriptableObject
 {
     public enum MeshMeta { Normal, Tricross };
-    public enum MaterialMeta { Normal, Frosch, MechPosnan, Bullech, Jez, Koziolki };
+    public enum MaterialMeta { Normal, Frosch, MechPosnan, Bullech, Jez, Koziolki, Draakus };
 
     [System.Serializable]
     private class WallMesh

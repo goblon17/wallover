@@ -40,7 +40,7 @@ MonoBehaviour:
     meta: 0
   wallMaterials:
   - material: {fileID: 2100000, guid: bf1c5b257a54fb04c9be59962f5849e8, type: 2}
-    meta: 0
+    meta: 6
   - material: {fileID: 2100000, guid: e4b612f4e8eb4ff4787720588a4ef82a, type: 2}
     meta: 0
   - material: {fileID: 2100000, guid: 9b8c9f259ea7b714db553a55981eeed8, type: 2}

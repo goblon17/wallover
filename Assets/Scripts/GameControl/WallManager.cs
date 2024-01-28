@@ -25,6 +25,9 @@ public class WallManager : Singleton<WallManager>
     public event Action WallEndedEvent;
     public event Action WallStartedEvent;
 
+    public WallList.MeshMeta MeshMeta => meshMeta;
+    public WallList.MaterialMeta MaterialMeta => materialMeta;
+
     private GameObject currentWall;
     private WallList.MeshMeta meshMeta;
     private WallList.MaterialMeta materialMeta;
@@ -61,10 +64,10 @@ public class WallManager : Singleton<WallManager>
         {
             (currentWall, meshMeta, materialMeta) = walls.GetRandomWall();
             currentWall.transform.position = spawnTransform.position;
-            WallStartedEvent?.Invoke();
             Debug.Log("Wall started");
 
 			yield return new WaitForSeconds(waitDuration);
+            WallStartedEvent?.Invoke();
 
             float counter = 0;
             bool enabledRagdoll = false;

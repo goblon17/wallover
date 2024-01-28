@@ -12,8 +12,6 @@ public class JoiningManager : Singleton<JoiningManager>
     private PlayerManager playerManager;
     [SerializeField]
     private PlayerInputManager playerInputManager;
-    [SerializeField]
-    private SoundModule soundModule;
 
     [SerializeField]
     private RectTransform playersJoiningPanel;
@@ -78,7 +76,7 @@ public class JoiningManager : Singleton<JoiningManager>
             if (firstPlayer)
             {
                 firstPlayer = false;
-                soundModule.PlaySound("Intro");
+                SpeakerManager.Instance.PlayIntro();
             }
         }
         else
