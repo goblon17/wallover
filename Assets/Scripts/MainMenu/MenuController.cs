@@ -1,14 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    [SerializeField]
-    private RectTransform mainMenuPanel;
-    [SerializeField]
-    private RectTransform playerJoinPanel;
-
     public void Quit()
     {
         Application.Quit();
@@ -16,12 +12,6 @@ public class MenuController : MonoBehaviour
 
     public void PlayButton()
     {
-        mainMenuPanel.gameObject.SetActive(false);
-        playerJoinPanel.gameObject.SetActive(true);
-    }
-
-    public void StartButton()
-    {
-
+        SceneManager.LoadScene(1);
     }
 }
